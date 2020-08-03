@@ -2,7 +2,7 @@ import React from "react";
 
 function ResultList(props) {
   return (
-    <div class="wrapper">
+    <div className="wrapper">
       {props.results.map((result) => (
         <div key={result.id}>
           <img

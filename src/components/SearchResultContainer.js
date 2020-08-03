@@ -3,9 +3,7 @@ import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
 import "../App.css";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
 
 class SearchResultContainer extends Component {
   state = {
@@ -40,20 +38,14 @@ class SearchResultContainer extends Component {
 
   render() {
     return (
-      <Container>
-        <Row>
-          <div>
-            <Col>
+      <div>
               <SearchForm
                 search={this.state.search}
                 handleFormSubmit={this.handleFormSubmit}
                 handleInputChange={this.handleInputChange}
               />
-              <ResultList results={this.state.results} />
-            </Col>
-          </div>
-        </Row>
-      </Container>
+        <ResultList results={this.state.results} />
+        </div>
     );
   }
 }
