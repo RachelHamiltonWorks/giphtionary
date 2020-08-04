@@ -1,10 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 import axios from 'axios'
-import { Route, Link,  } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 // components
-import Signup from "../src/components/sign-up"
-import LoginForm from '../src/components/login-form'
-import Navbar from '../src/components/navbar'
+import Signup from './components/sign-up'
+import LoginForm from './components/login-form'
+import Navbar from './components/navbar'
 import SearchResultContainer from "../src/components/SearchResultContainer";
 
 
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   getUser() {
-    axios.get('/user/').then(response => {
+    axios.get('/user').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
       if (response.data.user) {
@@ -60,8 +60,8 @@ class App extends Component {
           <p>Join the party, {this.state.username}!</p>
         }
         <Route
-          exact path="/"
-         />
+         path="/"
+      />
         <Route
           path="/login"
           render={() =>
@@ -72,6 +72,7 @@ class App extends Component {
         <Route
           path="/signup"
           render={() =>
+          
             <Signup/>}
         />
 <SearchResultContainer />;
