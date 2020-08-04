@@ -5,8 +5,6 @@ import '../App.css';
 import axios from 'axios'
 
 
-
-
 class Navbar extends Component {
     constructor() {
         super()

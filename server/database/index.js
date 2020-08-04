@@ -15,5 +15,8 @@ mongoose.connect(uri).then(
          console.log(err);
          
         }
-  );
+)
+
+module.exports = mongoose.connection
+
 
