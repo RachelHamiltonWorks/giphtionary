@@ -41,7 +41,13 @@ const App = () => {
             <Route path="/external-api" component={ExternalApi} />
           </Switch>
         </Container>
-        <Switch><SearchResultContainer />
+        <Switch>
+          <Container className="themed-container" fluid={true}>
+          <div className="wrapper">
+              <SearchResultContainer />
+              </div>
+          </Container>
+            
         </Switch>
         <Footer />
       </div>
