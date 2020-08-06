@@ -11,17 +11,14 @@ class SearchResultContainer extends Component {
     results: [],
   };
 
-  // When this component mounts, search the Giphy API for gifs
+  // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchGiphy("puppy");
+    this.searchGiphy("boobs");
   }
 
   searchGiphy = (query) => {
     API.search(query)
-      .then((res) => {
-        console.log(res)
-        this.setState({ results: res.data.data })
-      })
+      .then((res) => this.setState({ results: res.data.data }))
       .catch((err) => console.log(err));
   };
 
