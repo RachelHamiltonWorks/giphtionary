@@ -2,17 +2,13 @@ import React from "react";
 
 function ResultList(props) {
   return (
-    <div className="wrapper">
-      {props.results.map((result) => (
-        <div key={result.id}>
-          <img
-            alt={result.title}
-            className="img-fluid "
-            src={result.images.original.url}
-          />
-        </div>
+    <ul className="list-group">
+      {props.results.map(result => (
+        <li className="list-group-item" key={result.id}>
+          <img alt={result.title} className="img-fluid" src={result.images.original.url} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
