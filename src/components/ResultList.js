@@ -1,15 +1,23 @@
 import React from "react";
+import {Container} from "reactstrap"
 
 function ResultList(props) {
+  console.log(props.resultsDictionary)
   return (
-    <ul className="list-group">
-      {props.results.map(result => (
-        <li className="list-group-item" key={result.id}>
+    <Container>
+      <h2>
+        {props.resultsDictionary.shortdef}
+      </h2>
+      <div id="wrapper">
+        {props.resultsGiphy.map(result => (
           <img alt={result.title} className="img-fluid" src={result.images.original.url} />
-        </li>
-      ))}
-    </ul>
+        ))}
+      </div>
+    
+      
+    </Container>
   );
 }
+
 
 export default ResultList;

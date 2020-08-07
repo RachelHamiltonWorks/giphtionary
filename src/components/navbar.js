@@ -37,7 +37,7 @@ const NavBar = () => {
 
   return (
     <div className="nav-container">
-      <Navbar color="light" light expand="md">
+      <Navbar color="dark" light expand="md">
         <Container>
           <NavbarBrand className="logo" />
           <NavbarToggler onClick={toggle} />
@@ -71,7 +71,7 @@ const NavBar = () => {
                 <NavItem>
                   <Button
                     id="qsLoginBtn"
-                    color="primary"
+                    color="info"
                     className="btn-margin"
                     onClick={() => loginWithRedirect()}
                   >
@@ -115,7 +115,7 @@ const NavBar = () => {
                 <NavItem>
                   <Button
                     id="qsLoginBtn"
-                    color="primary"
+                    color="info"
                     block
                     onClick={() => loginWithRedirect({})}
                   >

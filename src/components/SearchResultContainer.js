@@ -3,20 +3,29 @@ import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
 
+
 class SearchResultContainer extends Component {
   state = {
-    search: "",
-    results: []
+    searchGiphy: "",
+    searchDictionary:"",
+    resultsGiphy: [],
+    resultsDictionary: []
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
     this.searchGiphy("kittens");
+    this.searchDictionary("kittens")
   }
 
   searchGiphy = query => {
-    API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
+    API.searchGiphy(query)
+      .then(res => this.setState({ resultsGiphy: res.data.data }))
+      .catch(err => console.log(err));
+  };
+  searchDictionary = query => {
+    API.searchDictionary(query)
+      .then(res => { console.log(res.data[0]); this.setState({ resultsDictionary: res.data[0] }) })
       .catch(err => console.log(err));
   };
 
@@ -28,21 +37,23 @@ class SearchResultContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
+  // When the form iss ubmitted, search the Giphy API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchGiphy(this.state.search);
+    this.searchDictionary(this.state.search);
   };
 
   render() {
     return (
       <div>
         <SearchForm
-          search={this.state.search}
+          search={this.state.searchGiphy,this.state.searchDictionary}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} />
+        <ResultList resultsGiphy={this.state.resultsGiphy}
+          resultsDictionary={this.state.resultsDictionary} />
       </div>
     );
   }
