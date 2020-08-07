@@ -13,7 +13,7 @@ class SearchResultContainer extends Component {
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchGiphy("boobs");
+    this.searchGiphy("kittens");
   }
 
   searchGiphy = (query) => {
@@ -38,7 +38,7 @@ class SearchResultContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
               <SearchForm
                 search={this.state.search}
                 handleFormSubmit={this.handleFormSubmit}

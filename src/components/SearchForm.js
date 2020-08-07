@@ -2,15 +2,16 @@ import React from "react";
 
 function SearchForm(props) {
   return (
+    <div className="container">
     <form>
-      <div className="form-group">
+      <div className="form-group bg-dark">
         <label htmlFor="search"></label>
         <input
           onChange={props.handleInputChange}
           value={props.search}
           name="search"
           type="text"
-          className="form-control"
+          className="form-control bg-dark text-white border-white"
           placeholder="Search for a Gif"
           id="search"
         />
@@ -19,6 +20,7 @@ function SearchForm(props) {
         </button>
       </div>
     </form>
+    </div>
   );
 }
 

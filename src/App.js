@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import { Route, Link } from 'react-router-dom'
+
+import {
+  Collapse,
+  // Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container,
+  Row,
+  Col,
+  Jumbotron,
+  Button
+} from 'reactstrap';
+
+import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
 // components
-import Signup from './components/sign-up'
-import LoginForm from './components/login-form'
-import Navbar from './components/navbar'
+import Signup from './components/sign-up';
+import LoginForm from './components/login-form';
+import Navbar from './components/navbar';
 import SearchResultContainer from "../src/components/SearchResultContainer";
 
 
@@ -52,7 +68,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App bg-dark">
    
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
