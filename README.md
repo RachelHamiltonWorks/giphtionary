@@ -1,2 +1,1 @@
-# giphtionary
-Language Learning on Loop
+#giphtionary 
