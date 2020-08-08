@@ -12,7 +12,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import SearchResultContainer from "./components/SearchResultContainer";
 
-
 // styles
 import "./App.css";
 
@@ -22,7 +21,6 @@ initFontAwesome();
 
 const App = () => {
   const { isLoading, error } = useAuth0();
-  
 
   if (error) {
     return <div>Oops... {error.message}</div>;
@@ -42,14 +40,11 @@ const App = () => {
             <Route path="/profile" component={Profile} />
             <Route path="/external-api" component={ExternalApi} />
           </Switch>
-          <Switch>
-          </Switch>
+          <Switch></Switch>
         </Container>
-        
+
         <Switch>
-        
-              <SearchResultContainer />
-            
+          <SearchResultContainer />
         </Switch>
         <Footer />
       </div>

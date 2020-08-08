@@ -3,42 +3,43 @@ import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
 
-
 class SearchResultContainer extends Component {
   state = {
-    searchGiphy: "",
-    searchDictionary:"",
+    search: "",
     resultsGiphy: [],
-    resultsDictionary: []
+    resultsDictionary: [],
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchGiphy("kittens");
-    this.searchDictionary("kittens")
+    this.searchGiphy("basset hound");
+    this.searchDictionary("basset hound");
   }
 
-  searchGiphy = query => {
+  searchGiphy = (query) => {
     API.searchGiphy(query)
-      .then(res => this.setState({ resultsGiphy: res.data.data }))
-      .catch(err => console.log(err));
+      .then((res) => this.setState({ resultsGiphy: res.data.data }))
+      .catch((err) => console.log(err));
   };
-  searchDictionary = query => {
+  searchDictionary = (query) => {
     API.searchDictionary(query)
-      .then(res => { console.log(res.data[0]); this.setState({ resultsDictionary: res.data[0] }) })
-      .catch(err => console.log(err));
+      .then((res) => {
+        console.log(res.data[0]);
+        this.setState({ resultsDictionary: res.data[0] });
+      })
+      .catch((err) => console.log(err));
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
   // When the form iss ubmitted, search the Giphy API for `this.state.search`
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     this.searchGiphy(this.state.search);
     this.searchDictionary(this.state.search);
@@ -48,12 +49,14 @@ class SearchResultContainer extends Component {
     return (
       <div>
         <SearchForm
-          search={this.state.searchGiphy, this.state.searchDictionary}
+          search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList resultsGiphy={this.state.resultsGiphy}
-          resultsDictionary={this.state.resultsDictionary} />
+        <ResultList
+          resultsGiphy={this.state.resultsGiphy}
+          resultsDictionary={this.state.resultsDictionary}
+        />
       </div>
     );
   }
