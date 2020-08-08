@@ -1,73 +1,172 @@
-import React, { Component } from 'react'
-import {  Link } from 'react-router-dom'
-import logo from '../logo.gif';
-import '../App.css';
-import axios from 'axios'
+import React, { useState } from "react";
+import { NavLink as RouterNavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import {
+  Collapse,
+  Container,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Button,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
 
-class Navbar extends Component {
-    constructor() {
-        super()
-        this.logout = this.logout.bind(this)
-    }
+import { useAuth0 } from "@auth0/auth0-react";
 
-    logout(event) {
-        event.preventDefault()
-        console.log('logging out')
-        axios.post('/user/logout').then(response => {
-          console.log(response.data)
-          if (response.status === 200) {
-            this.props.updateUser({
-              loggedIn: false,
-              username: null
-            })
-          }
-        }).catch(error => {
-            console.log('Logout error')
-        })
-      }
+const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const {
+    user,
+    isAuthenticated,
+    loginWithRedirect,
+    logout,
+  } = useAuth0();
+  const toggle = () => setIsOpen(!isOpen);
 
-    render() {
-        const loggedIn = this.props.loggedIn;
-        console.log('navbar render, props: ')
-        console.log(this.props);
-        
-        return (
-            <div className="bg-dark well">
+  const logoutWithRedirect = () =>
+    logout({
+      returnTo: window.location.origin,
+    });
 
-                <header className="navbar App-header" id="nav-container">
-                    <div className="col-4" >
-                        {loggedIn ? (
-                            <section className="navbar-section">
-                                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                                <span className="text-secondary">logout</span></Link>
+  return (
+    <div className="nav-container">
+      <Navbar color="dark" light expand="md">
+        <Container>
+          <NavbarBrand className="logo" />
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+              <NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  to="/"
+                  exact
+                  activeClassName="router-link-exact-active"
+                >
+                  Home
+                </NavLink>
+              </NavItem>
+              {isAuthenticated && (
+                <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to="/external-api"
+                    exact
+                    activeClassName="router-link-exact-active"
+                  >
+                    External API
+                  </NavLink>
+                </NavItem>
+              )}
+            </Nav>
+            <Nav className="d-none d-md-block" navbar>
+              {!isAuthenticated && (
+                <NavItem>
+                  <Button
+                    id="qsLoginBtn"
+                    color="info"
+                    className="btn-margin"
+                    onClick={() => loginWithRedirect()}
+                  >
+                    Log in
+                  </Button>
+                </NavItem>
+              )}
+              {isAuthenticated && (
+                <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav caret id="profileDropDown">
+                    <img
+                      src={user.picture}
+                      alt="Profile"
+                      className="nav-user-profile rounded-circle"
+                      width="50"
+                    />
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem header>{user.name}</DropdownItem>
+                    <DropdownItem
+                      tag={RouterNavLink}
+                      to="/profile"
+                      className="dropdown-profile"
+                      activeClassName="router-link-exact-active"
+                    >
+                      <FontAwesomeIcon icon="user" className="mr-3" /> Profile
+                    </DropdownItem>
+                    <DropdownItem
+                      id="qsLogoutBtn"
+                      onClick={() => logoutWithRedirect()}
+                    >
+                      <FontAwesomeIcon icon="power-off" className="mr-3" /> Log
+                      out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+              )}
+            </Nav>
+            {!isAuthenticated && (
+              <Nav className="d-md-none" navbar>
+                <NavItem>
+                  <Button
+                    id="qsLoginBtn"
+                    color="info"
+                    block
+                    onClick={() => loginWithRedirect({})}
+                  >
+                    Log in
+                  </Button>
+                </NavItem>
+              </Nav>
+            )}
+            {isAuthenticated && (
+              <Nav
+                className="d-md-none justify-content-between"
+                navbar
+                style={{ minHeight: 170 }}
+              >
+                <NavItem>
+                  <span className="user-info">
+                    <img
+                      src={user.picture}
+                      alt="Profile"
+                      className="nav-user-profile d-inline-block rounded-circle mr-3"
+                      width="50"
+                    />
+                    <h6 className="d-inline-block">{user.name}</h6>
+                  </span>
+                </NavItem>
+                <NavItem>
+                  <FontAwesomeIcon icon="user" className="mr-3" />
+                  <RouterNavLink
+                    to="/profile"
+                    activeClassName="router-link-exact-active"
+                  >
+                    Profile
+                  </RouterNavLink>
+                </NavItem>
+                <NavItem>
+                  <FontAwesomeIcon icon="power-off" className="mr-3" />
+                  <RouterNavLink
+                    to="#"
+                    id="qsLogoutBtn"
+                    onClick={() => logoutWithRedirect()}
+                  >
+                    Log out
+                  </RouterNavLink>
+                </NavItem>
+              </Nav>
+            )}
+          </Collapse>
+        </Container>
+      </Navbar>
+    </div>
+  );
+};
 
-                            </section>
-                        ) : (
-                                <section className="navbar-section">
-                                    <Link to="/" className="btn btn-link text-secondary">
-                                        <span className="text-secondary">home</span>
-                                        </Link>
-                                    <Link to="/login" className="btn btn-link text-secondary">
-                                    <span className="text-secondary">login</span>
-				</Link>
-                                    <Link to="/signup" className="btn btn-link">
-                                    <span className="text-secondary">sign up</span>
-				</Link>
-                                </section>
-                            )}
-                    </div>
-                    <div className="col-4 col-mr-auto text-center">
-                    <div id="top-filler"></div>
-                        <img src={logo} className="App-logo" alt="logo" />
-                    
-                    </div>
-                </header>
-            </div>
-
-        );
-
-    }
-}
-
-export default Navbar
+export default NavBar;

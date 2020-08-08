@@ -1,9 +1,55 @@
+<<<<<<< HEAD
 .header {
   text-align: center;
   /* background-color: black; */
+=======
+.next-steps .fa-link {
+  margin-right: 5px;
+}
+
+/* Fix for use only flexbox in content area */
+.next-steps .row {
+  margin-bottom: 0;
+}
+
+.next-steps .col-md-5 {
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .next-steps .col-md-5 {
+    margin-bottom: 0;
+  }
+}
+
+.spinner {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.result-block-container .result-block {
+  opacity: 1;
+>>>>>>> ff4b2745f2fec145b177c81222e82c8f9f3e1dc9
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+a {
+  color: magenta;
+  text-decoration: none;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #e9ecef;
 }

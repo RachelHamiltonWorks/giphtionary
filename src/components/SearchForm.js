@@ -4,8 +4,8 @@ function SearchForm(props) {
   return (
     <div className="container">
     <form>
-      <div className="form-group bg-dark">
-        <label htmlFor="search"></label>
+      <div className="form-group">
+        <label htmlFor="search">Search:</label>
         <input
           onChange={props.handleInputChange}
           value={props.search}
@@ -15,7 +15,7 @@ function SearchForm(props) {
           placeholder="Search for a Gif"
           id="search"
         />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary mx-auto">
+        <button onClick={props.handleFormSubmit} className="btn btn-info mt-3">
           Search
         </button>
       </div>

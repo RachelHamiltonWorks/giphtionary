@@ -1,102 +1,60 @@
-import React, { Component } from 'react';
+import React from "react";
+import { Router, Route, Switch } from "react-router-dom";
+import { Container } from "reactstrap";
 
-import {
-  Collapse,
-  // Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Container,
-  Row,
-  Col,
-  Jumbotron,
-  Button
-} from 'reactstrap';
-
-import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
-// components
-import Signup from './components/sign-up';
-import LoginForm from './components/login-form';
-import Navbar from './components/navbar';
-import SearchResultContainer from "../src/components/SearchResultContainer";
+import Loading from "./components/Loading";
+import NavBar from "./components/navbar";
+import Footer from "./components/Footer";
+import Home from "./views/Home";
+import Profile from "./views/Profile";
+import ExternalApi from "./views/ExternalApi";
+import { useAuth0 } from "@auth0/auth0-react";
+import history from "./utils/history";
+import SearchResultContainer from "./components/SearchResultContainer";
 
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      loggedIn: false,
-      username: null
-    }
+// styles
+import "./App.css";
 
-    this.getUser = this.getUser.bind(this)
-    this.componentDidMount = this.componentDidMount.bind(this)
-    this.updateUser = this.updateUser.bind(this)
+// fontawesome
+import initFontAwesome from "./utils/initFontAwesome";
+initFontAwesome();
+
+const App = () => {
+  const { isLoading, error } = useAuth0();
+  
+
+  if (error) {
+    return <div>Oops... {error.message}</div>;
   }
 
-  componentDidMount() {
-    this.getUser()
+  if (isLoading) {
+    return <Loading />;
   }
 
-  updateUser (userObject) {
-    this.setState(userObject)
-  }
-
-  getUser() {
-    axios.get('/user').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
-      if (response.data.user) {
-        console.log('Get User: There is a user saved in the server session: ')
-
-        this.setState({
-          loggedIn: true,
-          username: response.data.user.username
-        })
-      } else {
-        console.log('Get user: no user');
-        this.setState({
-          loggedIn: false,
-          username: null
-        })
-      }
-    })
-  }
-
-  render() {
-    return (
-      <div className="App bg-dark">
-   
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        {/* greet user if logged in: */}
-        {this.state.loggedIn &&
-          <p>Join the party, {this.state.username}!</p>
-        }
-        <Route
-         path="/"
-      />
-        <Route
-          path="/login"
-          render={() =>
-            <LoginForm
-              updateUser={this.updateUser}
-            />}
-        />
-        <Route
-          path="/signup"
-          render={() =>
-          
-            <Signup/>}
-        />
-<SearchResultContainer />;
-</div>
-      
-    );
-  }
-}
-
+  return (
+    <Router history={history}>
+      <div id="app" className="d-flex flex-column h-100">
+        <NavBar />
+        <Container className="flex-grow-1 mt-5">
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/external-api" component={ExternalApi} />
+          </Switch>
+          <Switch>
+          </Switch>
+        </Container>
+        
+        <Switch>
+        
+              <SearchResultContainer />
+            
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
+  );
+};
 
 export default App;
