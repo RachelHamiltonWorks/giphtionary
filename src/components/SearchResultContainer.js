@@ -6,8 +6,8 @@ import API from "../utils/API";
 
 class SearchResultContainer extends Component {
   state = {
-    searchGiphy: "",
-    searchDictionary:"",
+    search: "",
+    // searchDictionary:"",
     resultsGiphy: [],
     resultsDictionary: []
   };
@@ -48,7 +48,7 @@ class SearchResultContainer extends Component {
     return (
       <div>
         <SearchForm
-          search={this.state.searchGiphy,this.state.searchDictionary}
+          search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />

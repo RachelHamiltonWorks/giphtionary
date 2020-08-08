@@ -2,7 +2,7 @@ import React from "react";
 import {Container} from "reactstrap"
 
 function ResultList(props) {
-  console.log(props.resultsDictionary)
+  console.log(props.resultsDictionary);
   return (
     <Container>
       <h2>
@@ -10,7 +10,7 @@ function ResultList(props) {
       </h2>
       <div id="wrapper">
         {props.resultsGiphy.map(result => (
-          <img alt={result.title} className="img-fluid" src={result.images.original.url} />
+          <img alt={result.title} className="img-fluid" key={result.id}  src={result.images.original.url} />
         ))}
       </div>
     
