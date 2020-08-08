@@ -10,7 +10,7 @@ function SearchForm(props) {
           name="search"
           type="text"
           className="form-control"
-          placeholder="Search for a Gif"
+          placeholder="Type a word for definitions and gifs"
           id="search"
         />
 

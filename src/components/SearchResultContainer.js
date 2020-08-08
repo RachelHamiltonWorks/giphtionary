@@ -18,13 +18,17 @@ class SearchResultContainer extends Component {
 
   searchGiphy = (query) => {
     API.searchGiphy(query)
-      .then((res) => this.setState({ resultsGiphy: res.data.data }))
+      .then((res) => {
+       console.log("gifs", res.data);
+       this.setState({ resultsGiphy: res.data.data });
+       })
       .catch((err) => console.log(err));
   };
+
   searchDictionary = (query) => {
     API.searchDictionary(query)
       .then((res) => {
-        console.log(res.data[0]);
+        console.log("dictionary", res.data);
         this.setState({ resultsDictionary: res.data[0] });
       })
       .catch((err) => console.log(err));

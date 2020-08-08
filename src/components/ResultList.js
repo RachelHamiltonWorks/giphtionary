@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "reactstrap";
 
 function ResultList(props) {
-  console.log(props.resultsDictionary);
   return (
     <Container>
       <h2>{props.resultsDictionary.shortdef}</h2>
