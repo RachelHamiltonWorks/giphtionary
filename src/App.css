@@ -45,5 +45,34 @@ a {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #e9ecef;
+  color: #00000088;
+}
+
+.btn-info {
+  background-color: salmon;
+  border-color: #000000;
+}
+
+body {
+  background-color: black !important;
+}
+
+h1 {
+  color: gainsboro;
+}
+
+h1 {
+  color: gainsboro;
+}
+#wrapper img {
+  box-sizing: border-box;
+  size: 50px;
+  border-style: solid;
+}
+
+h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  border-style: inset;
+  border-color: salmon;
+  color: gainsboro;
 }
