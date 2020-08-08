@@ -11,7 +11,7 @@ function SearchForm(props) {
           name="search"
           type="text"
           className="form-control"
-          placeholder="Search for a Gif"
+          placeholder="Type a word to search for gifs and definitions"
           id="search"
         />
         <button onClick={props.handleFormSubmit} className="btn btn-info mt-3">

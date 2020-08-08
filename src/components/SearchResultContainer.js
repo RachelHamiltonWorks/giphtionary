@@ -48,7 +48,7 @@ class SearchResultContainer extends Component {
     return (
       <div>
         <SearchForm
-          search={this.state.searchGiphy,this.state.searchDictionary}
+          search={this.state.searchGiphy, this.state.searchDictionary}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
