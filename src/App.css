@@ -53,9 +53,9 @@ a {
   border-color: #000000;
 }
 
-body {
+/* body {
   background-color: black !important;
-}
+} */
 
 h1 {
   color: gainsboro;
@@ -76,3 +76,49 @@ h2 {
   border-color: salmon;
   color: gainsboro;
 }
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.light-theme {
+  background-color: #fff;
+  color: #444444;
+}
+
+nav {
+  display: flex;
+  text-align: center;
+  background-color: #503d81;
+  width: 100%;
+  padding: 20px;
+  color: #f8f8f8;
+}
+
+.dark-theme {
+  background-color: #1f1b24;
+  color: #f8f8f8;
+}
+
+.dark-theme nav {
+  background-color: #332940;
+}
+
+.dark-theme code {
+  color: red;
+}
+
+.button-container {
+  display: flex;
+  margin: 0 auto;
+}
+
+/* .content {
+  padding: 0.5em;
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  height: 90vh;
+} */

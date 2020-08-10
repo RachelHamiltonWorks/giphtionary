@@ -20,6 +20,11 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
+
+  // theming -rr
+  const [darkTheme, setDarkTheme] = React.useState(false);
+  // theming -rr
+
   const { isLoading, error } = useAuth0();
 
   if (error) {
@@ -31,24 +36,47 @@ const App = () => {
   }
 
   return (
-    <Router history={history}>
-      <div id="app" className="d-flex flex-column h-100">
-        <NavBar />
-        <Container className="flex-grow-1 mt-5">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/external-api" component={ExternalApi} />
-          </Switch>
-          <Switch></Switch>
-        </Container>
+    <>
+      {/* theming -rr */}
+      <div className={darkTheme ? 'dark-theme' : 'light-theme'}>
 
-        <Switch>
-          <SearchResultContainer />
-        </Switch>
-        <Footer />
+        <div className='button-container'>
+          <button className='btn btn-info mt-3' onClick={() => setDarkTheme(prevTheme => !prevTheme)}>
+            Toggle Theme
+          </button>
+        </div>
+
+        <div className='content'>
+          <h1>{darkTheme ? 'Dark Mode' : 'Light Mode'}</h1>
+          {/* <p>
+            Hello :)
+        </p> */}
+        </div>
+
+        <Router history={history}>
+          <div id="app" className="d-flex flex-column h-100">
+            <NavBar />
+            <Container className="flex-grow-1 mt-5">
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/profile" component={Profile} />
+                <Route path="/external-api" component={ExternalApi} />
+              </Switch>
+              <Switch></Switch>
+            </Container>
+
+            <Switch>
+              <SearchResultContainer />
+            </Switch>
+            <Footer />
+          </div>
+        </Router>
+
       </div>
-    </Router>
+      {/* theming -rr */}
+
+
+    </>
   );
 };
 
