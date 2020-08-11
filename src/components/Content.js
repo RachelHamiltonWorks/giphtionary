@@ -9,7 +9,7 @@ class Content extends Component {
   render() {
     return (
       <Container>
-        <Row className="d-flex justify-content-between">{ResultList}</Row>
+        {/* <Row className="d-flex justify-content-between">{ResultList}</Row> */}
       </Container>
     );
   }
