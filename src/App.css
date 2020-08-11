@@ -45,7 +45,11 @@ a {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #00000088;
+  color: #f0afa6;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+color: white;
 }
 
 .btn-info {
@@ -53,9 +57,9 @@ a {
   border-color: #000000;
 }
 
-body {
+/* body {
   background-color: black !important;
-}
+} */
 
 h1 {
   color: gainsboro;
@@ -75,4 +79,40 @@ h2 {
   border-style: inset;
   border-color: salmon;
   color: gainsboro;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.light-theme {
+  background-color: #f0afa6;
+  color: #444444;
+}
+
+.dark-theme {
+  background-color: #1f1b24;
+  color: #f8f8f8;
+}
+
+.dark-theme nav {
+  background-color: #332940;
+}
+
+.dark-theme code {
+  color: red;
+}
+
+.button-container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.top {
+  background-color: #353a40;
+}
+
+.col3 {
+  margin-top: -7px;
 }
