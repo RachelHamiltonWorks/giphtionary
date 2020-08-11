@@ -1,6 +1,6 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import { Container } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 import Loading from "./components/Loading";
 import NavBar from "./components/navbar";
@@ -11,6 +11,8 @@ import ExternalApi from "./views/ExternalApi";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import SearchResultContainer from "./components/SearchResultContainer";
+// import Toggle from "./components/Toggle.js";
+
 
 // styles
 import "./App.css";
@@ -40,22 +42,23 @@ const App = () => {
       {/* theming -rr */}
       <div className={darkTheme ? 'dark-theme' : 'light-theme'}>
 
-        <div className='button-container'>
-          <button className='btn btn-info mt-3' onClick={() => setDarkTheme(prevTheme => !prevTheme)}>
-            Toggle Theme
-          </button>
-        </div>
-
-        <div className='content'>
-          <h1>{darkTheme ? 'Dark Mode' : 'Light Mode'}</h1>
-          {/* <p>
-            Hello :)
-        </p> */}
-        </div>
 
         <Router history={history}>
           <div id="app" className="d-flex flex-column h-100">
-            <NavBar />
+            {/* <Container> */}
+              <Row className='top'>
+                <Col></Col>
+                <Col sm={10}><NavBar></NavBar></Col>
+                <Col className='col3'>
+                <div className='button-container bg-transparent'>
+                  <button className="btn btn-info mt-3" onClick={() => setDarkTheme(prevTheme => !prevTheme)}>
+                    Theme
+                  </button>
+                </div>
+                </Col>
+              </Row>
+            {/* </Container> */}
+
             <Container className="flex-grow-1 mt-5">
               <Switch>
                 <Route path="/" exact component={Home} />
