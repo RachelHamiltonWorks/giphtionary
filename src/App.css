@@ -45,7 +45,7 @@ a {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: magenta;
+  color: #f0afa6;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -87,18 +87,9 @@ body {
 }
 
 .light-theme {
-  background-color: #fff;
+  background-color: #f0afa6;
   color: #444444;
 }
-
-/* nav {
-  display: flex;
-  text-align: center;
-  background-color: #503d81;
-  width: 100%;
-  padding: 20px;
-  color: #f8f8f8;
-} */
 
 .dark-theme {
   background-color: #1f1b24;
@@ -125,12 +116,3 @@ body {
 .col3 {
   margin-top: -7px;
 }
-
-/* .content {
-  padding: 0.5em;
-  margin: 0 auto;
-  max-width: 600px;
-  font-size: 1.2rem;
-  line-height: 1.1;
-  height: 90vh;
-} */
