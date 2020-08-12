@@ -40,8 +40,12 @@
 }
 
 a {
-  color: magenta;
+  color: #f0afa6;
   text-decoration: none;
+}
+
+a:hover {
+  color: white;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -63,11 +67,13 @@ color: white;
 
 h1 {
   color: gainsboro;
+  text-shadow: salmon;
 }
 
-h1 {
+/* h1 {
   color: gainsboro;
-}
+} */
+
 #wrapper img {
   box-sizing: border-box;
   size: 50px;
@@ -75,11 +81,13 @@ h1 {
 }
 
 h2 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  border-style: inset;
+  font-family: "Times New Roman", Times, serif;
   border-color: salmon;
   color: gainsboro;
-}
+  border-radius: 25px;
+  border: 2px solid salmon;
+  padding: 20px;
+  }
 
 body {
   margin: 0;
@@ -87,18 +95,18 @@ body {
 }
 
 .light-theme {
-  background-color: #f0afa6;
-  color: #444444;
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 .dark-theme {
-  background-color: #1f1b24;
-  color: #f8f8f8;
+  background: rgb(0,0,247);
+  background: radial-gradient(circle, rgba(0,0,247,1) 0%, rgba(2,0,36,1) 55%);
 }
 
-.dark-theme nav {
+/* .dark-theme nav {
   background-color: #332940;
-}
+} */
 
 .dark-theme code {
   color: red;
@@ -115,4 +123,18 @@ body {
 
 .col3 {
   margin-top: -7px;
+}
+
+#profileDropDown .rounded-circle {
+  width: 30px;
+  height: 100%;
+}
+
+.img-fluid {
+  width: 370px;
+  height: 370px;
+  object-fit: cover;
+  border: 10px;
+  border-color: transparent;
+  border-radius: 25px;
 }

@@ -47,7 +47,7 @@ const App = () => {
           <div id="app" className="d-flex flex-column h-100">
             {/* <Container> */}
               <Row className='top'>
-                <Col></Col>
+                <Col>🐶</Col>
                 <Col sm={10}><NavBar></NavBar></Col>
                 <Col className='col3'>
                 <div className='button-container bg-transparent'>
