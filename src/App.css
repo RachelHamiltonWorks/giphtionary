@@ -104,14 +104,6 @@ body {
   background-attachment: fixed;
 }
 
-/* .dark-theme nav {
-  background-color: #332940;
-} */
-
-.dark-theme code {
-  color: red;
-}
-
 .button-container {
   display: flex;
   margin: 0 auto;
