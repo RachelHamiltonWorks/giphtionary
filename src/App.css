@@ -95,13 +95,13 @@ body {
 }
 
 .light-theme {
-  background: rgb(2,0,36);
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  background: url(./assets/hotel.png);
 }
 
 .dark-theme {
-  background: rgb(0,0,247);
-  background: radial-gradient(circle, rgba(0,0,247,1) 0%, rgba(2,0,36,1) 55%);
+  background-color: black;
+  background: url(./assets/deepPurple.jpg);
+  background-attachment: fixed;
 }
 
 /* .dark-theme nav {
