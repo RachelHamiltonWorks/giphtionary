@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import SearchForm from "./SearchForm";
+import Dictaphone from "./Dictaphone";
 import ResultList from "./ResultList";
 import API from "../utils/API";
+//import { text } from "express";
 
 class SearchResultContainer extends Component {
   state = {
     search: "",
     resultsGiphy: [],
     resultsDictionary: [],
+    speech: ""
+
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
@@ -34,28 +37,47 @@ class SearchResultContainer extends Component {
       .catch((err) => console.log(err));
   };
 
+//typed input
   handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
       [name]: value,
+      speech: event.target.placeholder
     });
   };
 
-  // When the form iss ubmitted, search the Giphy API for `this.state.search`
+
+  // When the form is submitted, search the Giphy API for `this.state.search`
   handleFormSubmit = (event) => {
     event.preventDefault();
-    this.searchGiphy(this.state.search);
-    this.searchDictionary(this.state.search);
+    let speech = document.getElementById("search").getAttribute("placeholder")
+    console.log(speech)
+    this.setState ({
+     speech: speech   
+    }, () => {
+      console.log (this.state.speech)
+      if (this.state.search === ""){
+        this.searchGiphy(this.state.speech);
+        this.searchDictionary(this.state.speech);
+      }
+     else {
+       console.log (this.state.search)
+      this.searchGiphy(this.state.search);
+      this.searchDictionary(this.state.search)
+     }
+    })
+    
   };
 
   render() {
     return (
       <div>
-        <SearchForm
+        <Dictaphone
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
+          handleSpeechChange={this.handleSpeechChange}
         />
         <ResultList
           resultsGiphy={this.state.resultsGiphy}
