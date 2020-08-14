@@ -116,3 +116,11 @@ body {
 .col3 {
   margin-top: -7px;
 }
+
+.img-fluid {
+  width: 370px;
+  height: 370px;
+  object-fit: cover;
+  border: 10px;
+  border-color: transparent;
+}
