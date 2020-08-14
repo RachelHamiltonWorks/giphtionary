@@ -8,7 +8,8 @@ function ResultList(props) {
       <div id="wrapper">
         {props.resultsGiphy.map((result) => (
           <img
-            className="img-fluid"
+          key={result.id}  
+          className="img-fluid"
             alt={result.id}
             src={result.images.original.url}
           />
