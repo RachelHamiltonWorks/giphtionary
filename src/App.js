@@ -11,8 +11,6 @@ import ExternalApi from "./views/ExternalApi";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import SearchResultContainer from "./components/SearchResultContainer";
-// import Toggle from "./components/Toggle.js";
-
 
 // styles
 import "./App.css";

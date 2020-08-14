@@ -66,13 +66,13 @@ color: white;
 } */
 
 h1 {
-  color: gainsboro;
-  text-shadow: salmon;
+  color: transparent;
+  /* text-shadow: black; */
+  text-decoration: none;
+  font-family: sans-serif;
+  filter: brightness(130%);
+  text-shadow: 0 0 4px rgb(181, 91, 197), 0 0 22px rgb(251, 240, 251);
 }
-
-/* h1 {
-  color: gainsboro;
-} */
 
 #wrapper img {
   box-sizing: border-box;
@@ -82,11 +82,12 @@ h1 {
 
 h2 {
   font-family: "Times New Roman", Times, serif;
-  border-color: salmon;
-  color: gainsboro;
+  text-shadow: 0 0 2px rgb(181, 91, 197), 0 0 22px rgb(251, 240, 251);
+  color: transparent;
+  box-shadow: 0 0 4px rgb(181, 91, 197), 0 0 22px rgb(251, 240, 251);
+  border: 2px dashed transparent;
   border-radius: 25px;
-  border: 2px solid salmon;
-  padding: 20px;
+  padding: 20px;  
   }
 
 body {
@@ -95,13 +96,14 @@ body {
 }
 
 .light-theme {
-  background: url(./assets/hotel.png);
+  background-color: rosybrown;
+  /* background: url(./assets/hotel.png); */
 }
 
 .dark-theme {
   background-color: black;
-  background: url(./assets/deepPurple.jpg);
-  background-attachment: fixed;
+  /* background: url(./assets/deepPurple.jpg); */
+  /* background-attachment: fixed; */
 }
 
 .button-container {
