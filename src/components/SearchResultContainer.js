@@ -39,6 +39,7 @@ class SearchResultContainer extends Component {
 
 //typed input
   handleInputChange = (event) => {
+    document.getElementById("search").placeholder=""
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
@@ -52,21 +53,30 @@ class SearchResultContainer extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     let speech = document.getElementById("search").getAttribute("placeholder")
-    console.log(speech)
-    this.setState ({
-     speech: speech   
-    }, () => {
-      console.log (this.state.speech)
-      if (this.state.search === ""){
-        this.searchGiphy(this.state.speech);
-        this.searchDictionary(this.state.speech);
-      }
-     else {
-       console.log (this.state.search)
-      this.searchGiphy(this.state.search);
-      this.searchDictionary(this.state.search)
-     }
-    })
+
+    let query = this.state.search === "" ? speech : this.state.search
+    this.searchGiphy(query)
+    this.searchDictionary(query)
+    this.setState({search: ""})
+    
+    document.getElementById("search").placeholder=""
+ 
+    // console.log(speech)
+    // this.setState ({
+    //  speech: speech   
+    // }, () => {
+    //   console.log (this.state.speech)
+    //   if (this.state.search === ""){
+    //     this.searchGiphy(this.state.speech);
+    //     this.searchDictionary(this.state.speech);
+    //   }
+    //  else {
+    //    console.log (this.state.search)
+    //   this.searchGiphy(this.state.search);
+    //   this.searchDictionary(this.state.search)
+    //  }
+    //  this.setState({search: "", speech: ""})
+    // })
     
   };
 
