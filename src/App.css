@@ -50,20 +50,25 @@ a:hover {
 
 .navbar-light .navbar-nav .nav-link {
   color: #f0afa6;
+  position: relative;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
 color: white;
 }
 
+.logo {
+  position: absolute;
+  left: 47%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  margin-top: 15px;
+  display: block;
+}
+
 .btn-info {
   background-color: salmon;
   border-color: #000000;
 }
-
-/* body {
-  background-color: black !important;
-} */
 
 h1 {
   color: transparent;
@@ -85,7 +90,7 @@ h2 {
   text-shadow: 0 0 2px rgb(181, 91, 197), 0 0 22px rgb(251, 240, 251);
   color: transparent;
   box-shadow: 0 0 4px rgb(181, 91, 197), 0 0 22px rgb(251, 240, 251);
-  border: 2px dashed transparent;
+  border: 2px solid transparent;
   border-radius: 25px;
   padding: 20px;  
   }
@@ -95,15 +100,29 @@ body {
   text-align: center;
 }
 
+.rave {
+  background-color: #f00;
+}
+
+.rave h1 {
+  color: blue;
+  text-decoration: none;
+  font-family: sans-serif;
+  filter: brightness(100%);
+  text-shadow: 0 0 0;
+}
+
 .light-theme {
-  background-color: rosybrown;
+  background-color: white;
   /* background: url(./assets/hotel.png); */
+}
+
+.light-theme h1 {
+  color: black;
 }
 
 .dark-theme {
   background-color: black;
-  /* background: url(./assets/deepPurple.jpg); */
-  /* background-attachment: fixed; */
 }
 
 .button-container {
@@ -116,7 +135,7 @@ body {
 }
 
 .col3 {
-  margin-top: -7px;
+  margin-top: -6px;
 }
 
 #profileDropDown .rounded-circle {

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "../assets/logo.gif";
 
 import {
   Collapse,
-  Container,
+  // Container,
   Navbar,
   NavbarToggler,
   NavbarBrand,
@@ -61,6 +62,9 @@ const NavBar = () => {
                 </NavItem>
               )}
             </Nav>
+            <div className="logo">
+            <img className="mb-3 app-logo" src={logo} alt="Giphtionary logo" width="200" />
+            </div>
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>

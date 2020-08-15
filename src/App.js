@@ -1,6 +1,6 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 
 import Loading from "./components/Loading";
 import NavBar from "./components/navbar";
@@ -22,7 +22,11 @@ initFontAwesome();
 const App = () => {
 
   // theming -rr
-  const [darkTheme, setDarkTheme] = React.useState(false);
+  const [theme, setTheme] = React.useState("light-theme");
+
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+
+  const toggle = () => setDropdownOpen(prevState => !prevState);
   // theming -rr
 
   const { isLoading, error } = useAuth0();
@@ -38,26 +42,40 @@ const App = () => {
   return (
     <>
       {/* theming -rr */}
-      <div className={darkTheme ? 'dark-theme' : 'light-theme'}>
+      <div className={theme}>
 
 
         <Router history={history}>
           <div id="app" className="d-flex flex-column h-100">
             {/* <Container> */}
-              <Row className='top'>
-                <Col></Col>
-                <Col sm={10}><NavBar></NavBar></Col>
-                <Col className='col3'>
+            <Row className='top'>
+              <Col></Col>
+              <Col sm={9}><NavBar></NavBar></Col>
+              <Col className='col3'>
                 <div className='button-container bg-transparent'>
-                  <button className="btn btn-info mt-3" onClick={() => setDarkTheme(prevTheme => !prevTheme)}>
+                  <Dropdown isOpen={dropdownOpen} toggle={toggle} className="btn mt-2">
+                    <DropdownToggle className="btn btn-info" caret>
+                      Themes
+                  </DropdownToggle>
+                    <DropdownMenu className="btn btn-info">
+                      {/* <DropdownItem header>Select a theme</DropdownItem> */}
+                      <DropdownItem onClick={ () => setTheme("light-theme")}>Light</DropdownItem>
+                      {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}
+                      {/* <DropdownItem divider /> */}
+                      <DropdownItem onClick={ () => setTheme("dark-theme")}>Dark</DropdownItem>
+                      <DropdownItem onClick={ () => setTheme("rave")}>Rave</DropdownItem>
+                      <DropdownItem>Basset</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                  {/* <button className="btn btn-info mt-3" onClick={() => setDarkTheme(prevTheme => !prevTheme)}>
                     Theme
-                  </button>
+                  </button> */}
                 </div>
-                </Col>
-              </Row>
+              </Col>
+            </Row>
             {/* </Container> */}
 
-            <Container className="flex-grow-1 mt-5">
+            <Container className="flex-grow-1 mt5">
               <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/profile" component={Profile} />
