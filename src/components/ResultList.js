@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "reactstrap";
 
 function ResultList(props) {
-  console.log(props.resultsDictionary);
+  // console.log(props.resultsDictionary);
   return (
     <Container>
       {props.resultsDictionary.shortdef && <h2>{props.resultsDictionary.shortdef.map((def) => 
