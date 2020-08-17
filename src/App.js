@@ -39,6 +39,8 @@ const App = () => {
     return <Loading />;
   }
 
+  
+  
   return (
     <>
       {/* theming -rr */}
@@ -64,7 +66,8 @@ const App = () => {
                       {/* <DropdownItem divider /> */}
                       <DropdownItem onClick={ () => setTheme("dark-theme")}>Dark</DropdownItem>
                       <DropdownItem onClick={ () => setTheme("rave")}>Rave</DropdownItem>
-                      <DropdownItem>Basset</DropdownItem>
+                      <DropdownItem onClick={ () => setTheme("basset")}>Basset</DropdownItem>
+                      <DropdownItem onClick={ () => setTheme("lovecraft")}>Lovecraft</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                   {/* <button className="btn btn-info mt-3" onClick={() => setDarkTheme(prevTheme => !prevTheme)}>

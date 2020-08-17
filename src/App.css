@@ -3,6 +3,7 @@
 }
 
 /* Fix for use only flexbox in content area */
+
 .next-steps .row {
   margin-bottom: 0;
 }
@@ -54,29 +55,25 @@ a:hover {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-color: white;
+  color: white;
 }
 
 .logo {
   position: absolute;
   left: 47%;
-  margin-left: -50px !important;  /* 50% of your logo width */
+  margin-left: -50px !important;
+  /* 50% of your logo width */
   margin-top: 15px;
   display: block;
 }
 
 .btn-info {
-  background-color: salmon;
+  background-color: rgb(2, 95, 38);
   border-color: #000000;
 }
 
 h1 {
   color: transparent;
-  /* text-shadow: black; */
-  text-decoration: none;
-  font-family: sans-serif;
-  filter: brightness(130%);
-  text-shadow: 0 0 4px rgb(181, 91, 197), 0 0 22px rgb(251, 240, 251);
 }
 
 #wrapper img {
@@ -87,13 +84,7 @@ h1 {
 
 h2 {
   font-family: "Times New Roman", Times, serif;
-  text-shadow: 0 0 2px rgb(181, 91, 197), 0 0 22px rgb(251, 240, 251);
-  color: transparent;
-  box-shadow: 0 0 4px rgb(181, 91, 197), 0 0 22px rgb(251, 240, 251);
-  border: 2px solid transparent;
-  border-radius: 25px;
-  padding: 20px;  
-  }
+}
 
 body {
   margin: 0;
@@ -121,8 +112,51 @@ body {
   color: black;
 }
 
+.basset {
+  background-color: burlywood;
+}
+
+.basset h1 {
+  color: chocolate;
+}
+
 .dark-theme {
   background-color: black;
+  color: transparent;
+  text-decoration: none;
+  font-family: sans-serif;
+  filter: brightness(130%);
+  text-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+}
+
+.lovecraft {
+  background-image: url("./assets/cthulhu.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+.lovecraft h1 {
+  color: transparent;
+  /* text-shadow: black; */
+  text-decoration: none;
+  font-family: sans-serif;
+  filter: brightness(130%);
+  text-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+}
+
+.lovecraft h2 {
+  font-family: sans-serif;
+  font-size: x-large;
+  text-shadow: 0 0 2px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+  color: transparent;
+  box-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.lovecraft-btn {
+  background-color: crimson;
 }
 
 .button-container {
