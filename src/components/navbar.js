@@ -63,7 +63,7 @@ const NavBar = () => {
               )}
             </Nav>
             <div className="logo">
-            <img className="mb-3 app-logo" src={logo} alt="Giphtionary logo" width="200" />
+            <img className="mb-3 app-logo" src={logo} alt="Giphtionary logo" width="400" />
             </div>
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (

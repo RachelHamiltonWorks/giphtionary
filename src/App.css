@@ -41,7 +41,7 @@
 }
 
 a {
-  color: #f0afa6;
+  color: #eb2a10;
   text-decoration: none;
 }
 
@@ -61,14 +61,13 @@ a:hover {
 .logo {
   position: absolute;
   left: 47%;
-  margin-left: -50px !important;
-  /* 50% of your logo width */
-  margin-top: 15px;
+  margin-left: -150px !important;
+  margin-top: 70px;
   display: block;
 }
 
 .btn-info {
-  background-color: rgb(2, 95, 38);
+  background-color: transparent;
   border-color: #000000;
 }
 
@@ -84,6 +83,7 @@ h1 {
 
 h2 {
   font-family: "Times New Roman", Times, serif;
+  border: 2px black;
 }
 
 body {
@@ -104,11 +104,11 @@ body {
 }
 
 .light-theme {
-  background-color: white;
+  background-color: wheat;
   /* background: url(./assets/hotel.png); */
 }
 
-.light-theme h1 {
+.light-theme h1, h2 {
   color: black;
 }
 
@@ -155,8 +155,12 @@ body {
   padding: 20px;
 }
 
-.lovecraft-btn {
-  background-color: crimson;
+.lovecraft .btn-info {
+  background-color: darkgreen;
+}
+
+.lovecraft .nav-link {
+  color: darkgreen;
 }
 
 .button-container {
@@ -165,16 +169,12 @@ body {
 }
 
 .top {
-  background-color: #353a40;
+  background-color: transparent;
+  height: 80px;
 }
 
 .col3 {
   margin-top: -6px;
-}
-
-#profileDropDown .rounded-circle {
-  width: 30px;
-  height: 100%;
 }
 
 .img-fluid {

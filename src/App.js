@@ -49,7 +49,6 @@ const App = () => {
 
         <Router history={history}>
           <div id="app" className="d-flex flex-column h-100">
-            {/* <Container> */}
             <Row className='top'>
               <Col></Col>
               <Col sm={9}><NavBar></NavBar></Col>
@@ -70,13 +69,9 @@ const App = () => {
                       <DropdownItem onClick={ () => setTheme("lovecraft")}>Lovecraft</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
-                  {/* <button className="btn btn-info mt-3" onClick={() => setDarkTheme(prevTheme => !prevTheme)}>
-                    Theme
-                  </button> */}
                 </div>
               </Col>
             </Row>
-            {/* </Container> */}
 
             <Container className="flex-grow-1 mt5">
               <Switch>
