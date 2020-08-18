@@ -1,10 +1,12 @@
 import React from "react";
-import Dictaphone from "./Dictaphone";
+import Dictaphone from "./Dictaphone"
+
 
 function SearchForm(props) {
   return (
     <div>
     <form>
+    {/* //give this contianer display of flex */}
       <div className="form-group container">
         <input
           onChange={props.handleInputChange}
@@ -15,7 +17,8 @@ function SearchForm(props) {
           placeholder= {props.transcript}
           id="search"
         />
-
+        
+{/* //take button out of div, replace with dictaphone component */}
         <button onClick={props.handleFormSubmit} className="btn btn-info mt-3">
           Search
         </button>
@@ -29,5 +32,3 @@ function SearchForm(props) {
 
 export default SearchForm;
 
-//saving this for later, in case it's helpful
-//<input type="text" value={transcript} onChange={e => this.toDoChange(e.target.value)}/>

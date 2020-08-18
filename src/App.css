@@ -1,20 +1,165 @@
-.next-steps .fa-link {
+@font-face {
+    font-family: 'BeonMedium';
+    src: url(./fonts/Beon/beon-webfont.woff);
+  }
+
+  @font-face {
+    font-family: 'Arigatou';
+    src: url(./fonts/a_arigatou_gozaimasu/aArigatouGozaimasu.ttf);
+  }
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.dark-theme {
+  background-color: black;
+  color: #f8f8f8;
+}
+
+.dark-theme h1 {
+  font-size: 72px;
+  border-radius: 2px;
+  cursor:pointer;
+  font-family: 'BeonMedium', Fallback, sans-serif;
+  background-color: transparent !important;
+  color: violet !important;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px violet, 0 0 40px violet, 0 0 50px violet, 0 0 60px violet, 0 0 70px violet
+}
+
+.dark-theme button { 
+  font-size: 16;
+  border-radius: 2px;
+  cursor:pointer;
+  font-family: 'BeonMedium', Fallback, sans-serif;
+  background-color: transparent !important;
+  border: 2px solid aqua !important;
+  color: aqua !important;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -webkit-box-shadow: inset 0px 0px 8px 3px aqua;
+  box-shadow: 0px 0px 10px 3px aqua, inset 0px 0px 10px 3px aqua;
+  border-color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px aqua, 0 0 40px aqua, 0 0 50px aqua, 0 0 60px aqua, 0 0 70px aqua
+}
+
+.light-theme {
+  background-color: rgb(219, 248, 247);
+}
+
+
+.light-theme h1 {
+  font-size: 72px;
+  border-radius: 2px;
+  cursor:pointer;
+  font-family: 'BeonMedium', Fallback, sans-serif;
+  background-color: transparent !important;
+  color: hotpink !important;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px hotpink, 0 0 40px hotpink, 0 0 50px hotpink, 0 0 60px hotpink, 0 0 70px hotpink
+}
+
+.light-theme button { 
+  font-size: 12px;
+  border-radius: 2px;
+  cursor:pointer;
+  font-family: lato;
+  background-color: transparent !important;
+  border: 2px solid orange !important;
+  color: orange !important;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -webkit-box-shadow: inset 0px 0px 8px 3px orange;
+  box-shadow: 0px 0px 10px 3px orange, inset 0px 0px 10px 3px orange;
+  border-color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 70px orange
+}
+
+/* .light-theme {
+  background-image: url(./assets/1.jpg);
+} */
+
+
+
+
+/* .next-steps .fa-link {
   margin-right: 5px;
 }
 
-/* Fix for use only flexbox in content area */
+Fix for use only flexbox in content area
 .next-steps .row {
   margin-bottom: 0;
 }
 
-.next-steps .col-md-5 {
+/* .next-steps .col-md-5 {
   margin-bottom: 3rem;
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .next-steps .col-md-5 {
     margin-bottom: 0;
   }
+} */ */
+
+.result-block-container .result-block {
+  opacity: 1;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.navbar-light .navbar-nav .nav-link {
+color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+color: white;
+}
+
+#wrapper img {
+  box-sizing: border-box;
+  size: 50px;
+  border-style: solid;
+}
+
+h2 {
+  border-style: solid;
+  border-radius: 2px;
+  cursor:pointer;
+  font-family: 'BeonMedium', Fallback, sans-serif;
+  background-color: transparent !important;
+  color: white !important;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white
+}
+
+
+
+/* .button-container {
+  display: flex;
+  margin: 0 auto;
+} */
+
+/* .col3 {
+  margin-top: -7px;
+} */
+
+.img-fluid {
+  width: 370px;
+  height: 370px;
+  object-fit: cover;
+  border: 10px;
+  border-color: transparent;
 }
 
 .spinner {
@@ -30,97 +175,3 @@
   right: 0;
 }
 
-.result-block-container .result-block {
-  opacity: 1;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-a {
-  color: magenta;
-  text-decoration: none;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: #f0afa6;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-color: white;
-}
-
-.btn-info {
-  background-color: salmon;
-  border-color: #000000;
-}
-
-/* body {
-  background-color: black !important;
-} */
-
-h1 {
-  color: gainsboro;
-}
-
-h1 {
-  color: gainsboro;
-}
-#wrapper img {
-  box-sizing: border-box;
-  size: 50px;
-  border-style: solid;
-}
-
-h2 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  border-style: inset;
-  border-color: salmon;
-  color: gainsboro;
-}
-
-body {
-  margin: 0;
-  text-align: center;
-}
-
-.light-theme {
-  background-color: #f0afa6;
-  color: #444444;
-}
-
-.dark-theme {
-  background-color: #1f1b24;
-  color: #f8f8f8;
-}
-
-.dark-theme nav {
-  background-color: #332940;
-}
-
-.dark-theme code {
-  color: red;
-}
-
-.button-container {
-  display: flex;
-  margin: 0 auto;
-}
-
-.top {
-  background-color: #353a40;
-}
-
-.col3 {
-  margin-top: -7px;
-}
-
-.img-fluid {
-  width: 370px;
-  height: 370px;
-  object-fit: cover;
-  border: 10px;
-  border-color: transparent;
-}
