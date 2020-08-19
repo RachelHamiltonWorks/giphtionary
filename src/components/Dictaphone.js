@@ -5,14 +5,13 @@ import SearchForm from "./SearchForm.js"
 const Dictaphone = (props) => {
   const { transcript, resetTranscript } = useSpeechRecognition()
 
-
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null
   }
 
-
   return (
     <div>
+      
       <SearchForm
       search={props.search}
       handleFormSubmit={props.handleFormSubmit}
@@ -21,6 +20,7 @@ const Dictaphone = (props) => {
       transcript = {transcript}
       />
       <button id="microphone" onClick={SpeechRecognition.startListening}> Speak </button>
+      
     </div>
   )
 }

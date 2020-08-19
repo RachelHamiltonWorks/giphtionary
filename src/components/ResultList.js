@@ -7,8 +7,8 @@ function ResultList(props) {
   return (
     <Container>
       <DisplayWord word={props.resultsDictionary} />
-      {props.resultsDictionary.shortdef && <h2>{props.resultsDictionary.shortdef.map((def) => 
-      <p>{def}</p>)}</h2>}
+      {props.resultsDictionary.shortdef && <h3>{props.resultsDictionary.shortdef.map((def) => 
+      <p>{def}</p>)}</h3>}
       <div id="wrapper">
         {props.resultsGiphy.map((result) => (
           <img

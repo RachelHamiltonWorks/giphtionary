@@ -1,7 +1,6 @@
+import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
-
 import Loading from "./components/Loading";
 import NavBar from "./components/navbar";
 import Footer from "./components/Footer";
@@ -11,9 +10,6 @@ import ExternalApi from "./views/ExternalApi";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import SearchResultContainer from "./components/SearchResultContainer";
-// import Logo from "./components/Logo";
-
-// styles
 import "./App.css";
 
 // fontawesome
@@ -21,19 +17,10 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-
-  // theming -rr
-  const [theme, setTheme] = React.useState("light-theme");
-
-  const [dropdownOpen, setDropdownOpen] = React.useState(false);
-
-  const toggle = () => setDropdownOpen(prevState => !prevState);
-  // theming -rr
-
   const { isLoading, error } = useAuth0();
 
   if (error) {
-    return <div>Oops... {error.message}</div>;
+    return <div>Oops, there appears to be an error. {error.message}</div>;
   }
 
   if (isLoading) {
@@ -42,37 +29,10 @@ const App = () => {
 
   return (
     <>
-
-      {/* theming -rr */}
-      <div className={theme}>
+      <div id="theme">
         <Router history={history}>
-          {/* <Logo /> */}
           <div id="app" className="d-flex flex-column h-100">
-
-            <NavBar></NavBar>
-
-            <div className='button-container bg-transparent'>
-
-              <Dropdown isOpen={dropdownOpen} toggle={toggle} className="btn mt-2">
-
-                <DropdownToggle className="btn btn-info" caret>
-                  Themes
-                  </DropdownToggle>
-                <DropdownMenu className="btn btn-info">
-                  {/* <DropdownItem header>Select a theme</DropdownItem> */}
-                  <DropdownItem onClick={() => setTheme("light-theme")}>Light</DropdownItem>
-                  {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}
-                  {/* <DropdownItem divider /> */}
-                  <DropdownItem onClick={() => setTheme("dark-theme")}>Dark</DropdownItem>
-                  <DropdownItem onClick={() => setTheme("rave")}>Rave</DropdownItem>
-                  <DropdownItem>Basset</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </div>
-
-
-
-
+            <NavBar/>
             <Container className="flex-grow-1 mt5">
               <Switch>
                 <Route path="/" exact component={Home} />
@@ -82,7 +42,6 @@ const App = () => {
               <Switch></Switch>
             </Container>
 
-
             <Switch>
               <SearchResultContainer />
             </Switch>
@@ -90,12 +49,7 @@ const App = () => {
           </div>
         </Router>
 
-
-
       </div>
-      {/* theming -rr */}
-
-
     </>
   );
 };

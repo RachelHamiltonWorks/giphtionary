@@ -3,9 +3,11 @@ import React, { Component } from "react";
 class Content extends Component {
   render() {
     return (
-     <div>
-      
-    </div>
+      <div>
+
+{/* There should really have been a lot of stuff here, whoops... */}
+
+      </div>
     );
   }
 }

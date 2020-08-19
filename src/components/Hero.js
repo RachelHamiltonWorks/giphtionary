@@ -1,9 +1,8 @@
-import React from "react";
+// import React from "react";
 
-import logo from "../assets/logo.gif";
 
-const Hero = () => (
-  <h2>Headword</h2>
-);
+// const Hero = () => (
+// 
+// );
 
-export default Hero;
+// export default Hero;
