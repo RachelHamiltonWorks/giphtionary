@@ -11,7 +11,6 @@ const Dictaphone = (props) => {
 
   return (
     <div>
-      
       <SearchForm
       search={props.search}
       handleFormSubmit={props.handleFormSubmit}
@@ -19,8 +18,7 @@ const Dictaphone = (props) => {
       handleSpeechChange={props.handleSpeechChange}
       transcript = {transcript}
       />
-      <button id="microphone" onClick={SpeechRecognition.startListening}> Speak </button>
-      
+     
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "reactstrap";
 import DisplayWord from "./DisplayWord.js";
 
+
 function ResultList(props) {
   // console.log(props.resultsDictionary);
   return (
