@@ -73,6 +73,11 @@
   text-shadow: 10px 10px 10px 10px white 
 }
 
+/* Fix for use only flexbox in content area */
+
+.next-steps .row {
+  margin-bottom: 0;
+}
 
 body {
   margin: 0;
@@ -123,24 +128,51 @@ text-shadow: 0 0 10px #ec0a61, 0 0 20px #ec0a61, 0 0 30px #ec0a61, 0 0 41px #ec0
   /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white */
 }
 
+a {
+  color: #eb2a10;
+  text-decoration: none;
+}
 
-
-.dark-theme footer a {
-  font-family: "atari_kids", Fallback, sans-serif;
+a:hover {
   color: white;
 }
 
-.dark-theme footer  {
-  background-color: #33333a;
+.navbar-light .navbar-nav .nav-link {
+  color: #f0afa6;
+  position: relative;
 }
 
-
-/* ________________ LIGHT THEME ________________________ */
-
-.light-theme {
-  background-color: rgb(219, 248, 247);
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
 }
 
+.logo {
+  position: absolute;
+  left: 47%;
+  margin-left: -125px !important;
+  margin-top: 70px;
+  display: block;
+}
+
+.btn-info {
+  background-color: transparent;
+  border-color: #000000;
+}
+
+h1 {
+  color: transparent;
+}
+
+#wrapper img {
+  box-sizing: border-box;
+  size: 50px;
+  border-style: solid;
+}
+
+h2 {
+  font-family: "Times New Roman", Times, serif;
+  border: 2px black;
+}
 
 .light-theme h1 {
   font-size: 72px;
@@ -155,70 +187,102 @@ text-shadow: 0 0 10px #ec0a61, 0 0 20px #ec0a61, 0 0 30px #ec0a61, 0 0 41px #ec0
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px hotpink, 0 0 40px hotpink, 0 0 50px hotpink, 0 0 60px hotpink, 0 0 70px hotpink
 }
 
-
-.light-theme button { 
-  font-size: 12px;
-  border-radius: 2px;
-  cursor:pointer;
-  font-family: lato;
-  background-color: transparent !important;
-  border: 2px solid orange !important;
-  color: orange !important;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  -webkit-box-shadow: inset 0px 0px 8px 3px orange;
-  box-shadow: 0px 0px 10px 3px orange, inset 0px 0px 10px 3px orange;
-  border-color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 70px orange
+.rave {
+  background-color: #f00;
 }
 
-
-.light-theme .img-fluid {
-  width: 300px;
-  height: 300px;
-  border-radius: 25%;
-  box-shadow:
-      inset 0 0 50px #fff,      /* inner white */
-      inset 20px 0 80px #f0f,   /* inner left magenta short */
-      inset -20px 0 80px #0ff,  /* inner right cyan short */
-      inset 20px 0 300px #f0f,  /* inner left magenta broad */
-      inset -20px 0 300px #0ff, /* inner right cyan broad */
-      0 0 50px #fff,            /* outer white */
-      -10px 0 80px #f0f,        /* outer left magenta */
-      10px 0 80px #0ff;         /* outer right cyan */
+.rave h1 {
+  color: blue;
+  text-decoration: none;
+  font-family: sans-serif;
+  filter: brightness(100%);
+  text-shadow: 0 0 0;
 }
 
-/* ________________ ALL OTHER THEMES ________________________ */
-
-
-
-
-
-/* ________________ FOR EDITING LATER________________________ */
-
-
-.result-block-container .result-block {
-  opacity: 1;
+.light-theme {
+  background-color: rgb(206, 131, 45);
+  /* background: url(./assets/hotel.png); */
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.light-theme h1 {
+  color: transparent;
+  text-shadow: 0 0 2px rgb(104, 65, 24), 0 0 22px rgb(202, 151, 93);
 
+}
+
+.light-theme h2 {
+  font-family: sans-serif;
+  font-size: xx-large;
+  color: transparent;
+  text-shadow: 0 0 1px rgb(104, 65, 24), 0 0 22px rgb(202, 151, 93);
+  /* box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128); */
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.basset {
+  background-color: burlywood;
+}
+
+.basset h1 {
+  color: chocolate;
+}
+
+.dark-theme {
+  background-color: black;
+  color: transparent;
+  text-decoration: none;
+  font-family: sans-serif;
+  filter: brightness(130%);
+  text-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+}
+
+.undertaker {
+  background-image: url("./assets/magic.jpg");
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+.undertaker h1 {
+  color: transparent;
+  /* text-shadow: black; */
+  text-decoration: none;
+  font-family: sans-serif;
+  filter: brightness(130%);
+  text-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128);
+}
+
+.undertaker h2 {
+  font-family: sans-serif;
+  font-size: x-large;
+  text-shadow: 0 0 2px rgb(133, 84, 219), 0 0 22px rgb(168, 8, 128);
+  color: transparent;
+  box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.undertaker .btn-info {
+  background-color: rgb(133, 84, 219);
+}
+
+.undertaker .nav-link {
+  color: rgb(133, 84, 219);
 }
 
 .navbar-light .navbar-nav .nav-link {
 color: white;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-color: white;
+.top {
+  background-color: transparent;
+  height: 80px;
 }
 
-#wrapper img {
-  box-sizing: border-box;
-  size: 50px;
-  border-style: solid;
+.col3 {
+  margin-top: -6px;
 }
 
 
@@ -228,18 +292,5 @@ color: white;
   object-fit: cover;
   border: 10px;
   border-color: transparent;
+  border-radius: 25px;
 }
-
-.spinner {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
