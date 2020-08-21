@@ -14,7 +14,6 @@ import SearchResultContainer from "./components/SearchResultContainer";
 
 // styles
 import "./App.css";
-import "./lovecraft.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";

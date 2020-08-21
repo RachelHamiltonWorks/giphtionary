@@ -61,7 +61,7 @@ a:hover {
 .logo {
   position: absolute;
   left: 47%;
-  margin-left: -150px !important;
+  margin-left: -125px !important;
   margin-top: 70px;
   display: block;
 }
@@ -104,12 +104,25 @@ body {
 }
 
 .light-theme {
-  background-color: wheat;
+  background-color: rgb(206, 131, 45);
   /* background: url(./assets/hotel.png); */
 }
 
-.light-theme h1, h2 {
-  color: black;
+.light-theme h1 {
+  color: transparent;
+  text-shadow: 0 0 2px rgb(104, 65, 24), 0 0 22px rgb(202, 151, 93);
+
+}
+
+.light-theme h2 {
+  font-family: sans-serif;
+  font-size: xx-large;
+  color: transparent;
+  text-shadow: 0 0 1px rgb(104, 65, 24), 0 0 22px rgb(202, 151, 93);
+  /* box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128); */
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  padding: 10px;
 }
 
 .basset {
@@ -129,38 +142,38 @@ body {
   text-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
 }
 
-.lovecraft {
-  background-image: url("./assets/cthulhu.jpg");
+.undertaker {
+  background-image: url("./assets/magic.jpg");
   background-attachment: fixed;
   background-size: 100%;
 }
 
-.lovecraft h1 {
+.undertaker h1 {
   color: transparent;
   /* text-shadow: black; */
   text-decoration: none;
   font-family: sans-serif;
   filter: brightness(130%);
-  text-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+  text-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128);
 }
 
-.lovecraft h2 {
+.undertaker h2 {
   font-family: sans-serif;
   font-size: x-large;
-  text-shadow: 0 0 2px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+  text-shadow: 0 0 2px rgb(133, 84, 219), 0 0 22px rgb(168, 8, 128);
   color: transparent;
-  box-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+  box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128);
   border: 2px solid transparent;
   border-radius: 25px;
   padding: 20px;
 }
 
-.lovecraft .btn-info {
-  background-color: darkgreen;
+.undertaker .btn-info {
+  background-color: rgb(133, 84, 219);
 }
 
-.lovecraft .nav-link {
-  color: darkgreen;
+.undertaker .nav-link {
+  color: rgb(133, 84, 219);
 }
 
 .button-container {
