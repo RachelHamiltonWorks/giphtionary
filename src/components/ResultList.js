@@ -1,15 +1,15 @@
+  
 import React from "react";
 import { Container } from "reactstrap";
 import DisplayWord from "./DisplayWord.js";
-
 
 function ResultList(props) {
   // console.log(props.resultsDictionary);
   return (
     <Container>
       <DisplayWord word={props.resultsDictionary} />
-      {props.resultsDictionary.shortdef && <h3>{props.resultsDictionary.shortdef.map((def) => 
-      <p>{def}</p>)}</h3>}
+      {props.resultsDictionary.shortdef && <h2>{props.resultsDictionary.shortdef.map((def) => 
+      <p>{def}</p>)}</h2>}
       <div id="wrapper">
         {props.resultsGiphy.map((result) => (
           <img

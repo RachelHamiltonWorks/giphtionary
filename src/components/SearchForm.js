@@ -1,14 +1,12 @@
 import React from "react";
-import SpeechRecognition from 'react-speech-recognition'
-// import { Container, Form } from "react-bootstrap";
+import { Container, Form } from "reactstrap";
 
 
 function SearchForm(props) {
   return (
     <div>
-        <form>
-        {/* <Container> */}
-        {/* <Form.Control size="sm" name="foo" placeholder="Smaller Input" /> */}
+        <Form>
+        <Container>
           <input
             onChange={props.handleInputChange}
             value={props.search}
@@ -18,10 +16,9 @@ function SearchForm(props) {
             placeholder={props.transcript} n
             id="search"
           />
-          <button onClick={props.handleFormSubmit}> Search</button>
-          {/* </Container> */}
-        </form>
-        <button id="microphone" onClick={SpeechRecognition.startListening}> Speak </button>
+
+          </Container>
+        </Form>
       </div>
      
     
