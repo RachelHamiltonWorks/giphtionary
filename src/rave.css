@@ -1,0 +1,11 @@
+.rave {
+    background-color: #f00;
+  }
+  
+  .rave h1 {
+    color: blue;
+    text-decoration: none;
+    font-family: sans-serif;
+    filter: brightness(100%);
+    text-shadow: 0 0 0;
+  }
