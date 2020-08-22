@@ -13,29 +13,36 @@ class SearchResultContainer extends Component {
 
   };
 
-  // When this component mounts, search the Giphy API for pictures of kittens
-  componentDidMount() {
-    this.searchGiphy("servo");
-    this.searchDictionary("servo");
-  }
-
-  searchGiphy = (query) => {
-    API.searchGiphy(query)
-      .then((res) => {
-       console.log("gifs", res.data);
-       this.setState({ resultsGiphy: res.data.data });
-       })
-      .catch((err) => console.log(err));
-  };
-
-  searchDictionary = (query) => {
-    API.searchDictionary(query)
-      .then((res) => {
-        console.log("dictionary", res.data);
-        this.setState({ resultsDictionary: res.data[0] });
+  searchData = (query) => {
+    API.searchGiphy(query).then((giphyRes) => {
+      API.searchDictionary(query).then((dictRes) => {
+        console.log("gifs", giphyRes.data);
+        console.log("words", dictRes.data);
+        this.setState({ 
+          resultsGiphy: giphyRes.data.data, 
+          resultsDictionary: dictRes.data[0]
+        })
       })
-      .catch((err) => console.log(err));
+    })
   };
+
+  // searchGiphy = (query) => {
+  //   API.searchGiphy(query)
+  //     .then((res) => {
+  //      console.log("gifs", res.data);
+  //      this.setState({ resultsGiphy: res.data.data });
+  //      })
+  //     .catch((err) => console.log(err));
+  // };
+
+  // searchDictionary = (query) => {
+  //   API.searchDictionary(query)
+  //     .then((res) => {
+  //       console.log("dictionary", res.data);
+  //       this.setState({ resultsDictionary: res.data[0] });
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
 //typed input
   handleInputChange = (event) => {
@@ -55,8 +62,7 @@ class SearchResultContainer extends Component {
     let speech = document.getElementById("search").getAttribute("placeholder")
 
     let query = this.state.search === "" ? speech : this.state.search
-    this.searchGiphy(query)
-    this.searchDictionary(query)
+    this.searchData(query);
     this.setState({search: ""})
     
     document.getElementById("search").placeholder=""
@@ -80,7 +86,23 @@ class SearchResultContainer extends Component {
     
   };
 
+  renderResultList = () => {
+    console.log(this.state.resultsDictionary);
+    console.log(this.state.resultsGiphy);
+    if (this.state.resultsDictionary && this.state.resultsGiphy.length){
+      console.log("rendering result list")
+      return (<ResultList
+      resultsGiphy={this.state.resultsGiphy}
+      resultsDictionary={this.state.resultsDictionary}
+    />)
+    } else {
+      return <div></div>;
+    }
+  };
+
   render() {
+    console.log("resultsDictionary")
+    console.log(this.state.resultsDictionary)
     return (
       <div>
         <Dictaphone
@@ -89,10 +111,7 @@ class SearchResultContainer extends Component {
           handleInputChange={this.handleInputChange}
           handleSpeechChange={this.handleSpeechChange}
         />
-        <ResultList
-          resultsGiphy={this.state.resultsGiphy}
-          resultsDictionary={this.state.resultsDictionary}
-        />
+        {this.renderResultList()}
       </div>
     );
   }

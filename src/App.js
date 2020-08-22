@@ -15,6 +15,7 @@ import SearchResultContainer from "./components/SearchResultContainer";
 // styles
 import "./App.css";
 import "./lovecraft.css";
+import "./basset.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
@@ -33,7 +34,7 @@ const App = () => {
   const { isLoading, error } = useAuth0();
 
   if (error) {
-    return <div>Oops... {error.message}</div>;
+    return <div>Oops, there appears to be an error. {error.message}</div>;
   }
 
   if (isLoading) {
@@ -92,9 +93,6 @@ const App = () => {
         </Router>
 
       </div>
-      {/* theming -rr */}
-
-
     </>
   );
 };

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from "../assets/logo.gif";
-
 import {
   Collapse,
   // Container,
@@ -18,19 +16,15 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-
 import { useAuth0 } from "@auth0/auth0-react";
-
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
-
   const logoutWithRedirect = () =>
     logout({
       returnTo: window.location.origin,
     });
-
   return (
     <div className="nav-container">
       <Navbar color="transparent" light expand="md">
@@ -39,16 +33,6 @@ const NavBar = () => {
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
-              <NavItem>
-                <NavLink
-                  tag={RouterNavLink}
-                  to="/"
-                  exact
-                  activeClassName="router-link-exact-active"
-                >
-                  Home
-                </NavLink>
-              </NavItem>
               {isAuthenticated && (
                 <NavItem>
                   <NavLink
@@ -170,5 +154,4 @@ const NavBar = () => {
     </div>
   );
 };
-
 export default NavBar;

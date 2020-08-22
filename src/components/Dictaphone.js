@@ -2,18 +2,13 @@ import React from 'react'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import SearchForm from "./SearchForm.js"
 import { Container, Row, Col } from 'reactstrap'
-
 const Dictaphone = (props) => {
-  const { transcript, resetTranscript } = useSpeechRecognition()
-
-
+  const { transcript} = useSpeechRecognition()
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null
   }
-
   return (
     <div>
-
       <SearchForm
         search={props.search}
         handleFormSubmit={props.handleFormSubmit}

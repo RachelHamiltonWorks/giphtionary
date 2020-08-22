@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 // import logo from "../assets/logo.gif";
 
@@ -9,4 +9,8 @@ const Hero = () => (
   </div>
 );
 
-export default Hero;
+// const Hero = () => (
+// <img src={textFrame} alt="React logo" />  
+// );
+
+// export default Hero;
