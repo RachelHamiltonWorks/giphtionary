@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import {
   Collapse,
-  Container,
+  // Container,
   Navbar,
   NavbarToggler,
   NavbarBrand,
@@ -17,19 +16,15 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-
 import { useAuth0 } from "@auth0/auth0-react";
-
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
-
   const logoutWithRedirect = () =>
     logout({
       returnTo: window.location.origin,
     });
-
   return (
     <div className="nav-container">
       <Navbar color="transparent" light expand="md">
@@ -38,16 +33,6 @@ const NavBar = () => {
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
-              <NavItem>
-                <NavLink
-                  tag={RouterNavLink}
-                  to="/"
-                  exact
-                  activeClassName="router-link-exact-active"
-                >
-                  Home
-                </NavLink>
-              </NavItem>
               {isAuthenticated && (
                 <NavItem>
                   <NavLink
@@ -61,6 +46,12 @@ const NavBar = () => {
                 </NavItem>
               )}
             </Nav>
+            <div className="logo">
+              <h1>Giphtionary</h1>
+            </div>
+            {/* <div className="logo">
+            <img className="mb-3 app-logo" src={logo} alt="Giphtionary logo" width="400" />
+            </div> */}
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>
@@ -163,5 +154,4 @@ const NavBar = () => {
     </div>
   );
 };
-
 export default NavBar;

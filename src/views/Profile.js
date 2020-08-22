@@ -15,7 +15,7 @@ export const ProfileComponent = () => {
           <img
             src={user.picture}
             alt="Profile"
-            className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
+            className="rounded-circle profile-picture mb-3 mb-md-0"
           />
         </Col>
         <Col md>

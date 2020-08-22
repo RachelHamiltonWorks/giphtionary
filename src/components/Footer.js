@@ -1,8 +1,9 @@
 import React from "react";
 
+
+
 const Footer = () => (
-  <footer className="bg-dark p-3 text-center">
-    <div className="logo" />
+  <footer className="p-3 text-center">
     <p>
       <a href="https://github.com/RachelHamiltonWorks/giphtionary">
         Repository
