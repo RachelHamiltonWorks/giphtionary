@@ -1,14 +1,23 @@
 const express = require("express");
-const morgan = require("morgan");
-const helmet = require("helmet");
-const { join } = require("path");
 
+const mongoose = require("mongoose");
+const routes = require("./routes");
 const app = express();
+const PORT = process.env.PORT || 3001;
 
-const port = process.env.SERVER_PORT || 3000;
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+app.use(routes);
 
-app.use(morgan("dev"));
-app.use(helmet());
-app.use(express.static(join(__dirname, "build")));
+mongoose.connect(
+  process.env.MONGODB_URI ||
+    "mongodb+srv://MichaelP:Stringbean86@cluster0.fwi9o.mongodb.net/user?retryWrites=true&w=majority"
+);
 
-app.listen(port, () => console.log(`Server listening on port ${port}`));
+app.listen(PORT, function () {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});

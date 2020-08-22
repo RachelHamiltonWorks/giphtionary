@@ -1,7 +1,8 @@
 {
-  "name": "auth0-react-sample",
-  "version": "0.1.0",
-  "private": true,
+  "name": "giphtionary",
+  "version": "1.0.0",
+  "main": "server.js",
+  "description": "",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -12,26 +13,17 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.10.1",
-    "@testing-library/react": "^10.3.0",
-    "jest-environment-jsdom-sixteen": "^1.0.3",
-    "jest-fetch-mock": "^3.0.3",
-    "nodemon": "^2.0.4"
+    "concurrently": "^4.1.2",
+    "nodemon": "^1.18.7"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.16",
+    "react-toastify": "^6.0.8"
   }
 }
