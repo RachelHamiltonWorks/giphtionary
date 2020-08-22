@@ -13,7 +13,6 @@ import history from "./utils/history";
 import SearchResultContainer from "./components/SearchResultContainer";
 // import Toggle from "./components/Toggle.js";
 
-
 // styles
 import "./App.css";
 
@@ -22,12 +21,11 @@ import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
 const App = () => {
-
   // theming -rr
   const [darkTheme, setDarkTheme] = React.useState(false);
   // theming -rr
 
-  const { isLoading, error } = useAuth0();
+  const { isLoading, error, user } = useAuth0();
 
   if (error) {
     return <div>Oops... {error.message}</div>;
@@ -40,23 +38,26 @@ const App = () => {
   return (
     <>
       {/* theming -rr */}
-      <div className={darkTheme ? 'dark-theme' : 'light-theme'}>
-
-
+      <div className={darkTheme ? "dark-theme" : "light-theme"}>
         <Router history={history}>
           <div id="app" className="d-flex flex-column h-100">
             {/* <Container> */}
-              <Row className='top'>
-                <Col></Col>
-                <Col sm={10}><NavBar></NavBar></Col>
-                <Col className='col3'>
-                <div className='button-container bg-transparent'>
-                  <button className="btn btn-info mt-3" onClick={() => setDarkTheme(prevTheme => !prevTheme)}>
+            <Row className="top">
+              <Col></Col>
+              <Col sm={10}>
+                <NavBar></NavBar>
+              </Col>
+              <Col className="col3">
+                <div className="button-container bg-transparent">
+                  <button
+                    className="btn btn-info mt-3"
+                    onClick={() => setDarkTheme((prevTheme) => !prevTheme)}
+                  >
                     Theme
                   </button>
                 </div>
-                </Col>
-              </Row>
+              </Col>
+            </Row>
             {/* </Container> */}
 
             <Container className="flex-grow-1 mt-5">
@@ -74,11 +75,8 @@ const App = () => {
             <Footer />
           </div>
         </Router>
-
       </div>
       {/* theming -rr */}
-
-
     </>
   );
 };
