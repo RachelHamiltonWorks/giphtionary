@@ -11,7 +11,11 @@
    right: 200px;
  }
 
- .foot {
+ .input {
+   border-color: black;
+ }
+
+ /* .foot {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -19,7 +23,7 @@
   background-color: transparent;
   color: white;
   text-align: center;
-}
+} */
 
 @font-face {
     font-family: 'BeonMedium';
@@ -104,6 +108,10 @@ body {
   text-align: center;
 }
 
+#app {
+  background-size: auto;
+}
+
 a {
   color: #eb2a10;
   text-decoration: none;
@@ -150,7 +158,7 @@ h2 {
   border: 2px black;
 }
 
-.light-theme h1 {
+/* .light-theme h1 {
   font-size: 72px;
   border-radius: 2px;
   cursor:pointer;
@@ -161,38 +169,33 @@ h2 {
   transition: all .3s ease-in-out;
   border-color: #fff;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px hotpink, 0 0 40px hotpink, 0 0 50px hotpink, 0 0 60px hotpink, 0 0 70px hotpink
+} */
+
+.light-theme {	
+  /* background-color: rgb(206, 131, 45);	 */
+  background: url(./assets/lightBackground.png);	
+}	
+.light-theme h1 {	
+  color: transparent;	
+  text-shadow: 0 0 2px rgb(7, 76, 97);	
+}	
+.light-theme h2 {	
+  font-family: sans-serif;	
+  font-size: xx-large;	
+  color: transparent;	
+  text-shadow: 0 0 1px rgb(7, 76, 97), 0 0 22px rgb(7, 76, 97);	
+  /* box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128); */	
+  border: 2px solid rgb(7, 76, 97);	
+  border-radius: 25px;	
+  padding: 10px;	
 }
 
-<<<<<<< Updated upstream
-.light-theme {
-  background-color: rgb(206, 131, 45);
-  /* background: url(./assets/hotel.png); */
+.light-theme .btn-info {
+  background-color: rgb(7, 76, 97);
 }
 
-.light-theme h1 {
-  color: transparent;
-  text-shadow: 0 0 2px rgb(104, 65, 24), 0 0 22px rgb(202, 151, 93);
-}
-
-.light-theme h2 {
-  font-family: sans-serif;
-  font-size: xx-large;
-  color: transparent;
-  text-shadow: 0 0 1px rgb(104, 65, 24), 0 0 22px rgb(202, 151, 93);
-  /* box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128); */
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 25px;
-  padding: 10px;
-=======
-body {
-  margin: 0;
-  text-align: center;
-}
-
-.light-theme {
-  background-color: #f0afa6;
-  color: #444444;
->>>>>>> Stashed changes
+.light-theme .nav-link {
+  color: rgb(7, 76, 97);
 }
 
 .dark-theme {
@@ -242,15 +245,6 @@ body {
   /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white */
 }
 
-<<<<<<< Updated upstream
-/* .dark-theme {
-  background-color: black;
-  color: transparent;
-  text-decoration: none;
-  font-family: sans-serif;
-  filter: brightness(130%);
-  text-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
-=======
 .top {
   background-color: #353a40;
 }
@@ -275,7 +269,6 @@ body {
   font-size: 1.2rem;
   line-height: 1.1;
   height: 90vh;
->>>>>>> Stashed changes
 } */
 
 .navbar-light .navbar-nav .nav-link {

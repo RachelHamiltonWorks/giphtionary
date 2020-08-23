@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 
 import Loading from './components/Loading';
 import NavBar from './components/navbar';
@@ -13,12 +13,14 @@ import history from './utils/history';
 import SearchResultContainer from './components/SearchResultContainer';
 
 // styles
-import "./App.css";
-import "./lovecraft.css";
-import "./basset.css";
+import "/App.css";
+import "../client/src/lovecraft.css";
+import "../client/src/basset.css";
+import "../client/src/undertaker.css";
+import "../client/src/rave.css";
+
 // import "./dark-theme.css";
-import "./undertaker.css";
-import "./rave.css";
+
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
@@ -44,14 +46,10 @@ const App = () => {
     return <Loading />;
   }
 
-  
-  
   return (
     <>
       {/* theming -rr */}
       <div className={theme}>
-
-
         <Router history={history}>
           <div id="app" className="d-flex flex-column h-100">
             <Row className='top'>
@@ -65,14 +63,14 @@ const App = () => {
                   </DropdownToggle>
                     <DropdownMenu className="btn btn-info">
                       {/* <DropdownItem header>Select a theme</DropdownItem> */}
-                      <DropdownItem onClick={ () => setTheme("light-theme")}>Light</DropdownItem>
+                      <DropdownItem onClick={() => setTheme("light-theme")}>Light</DropdownItem>
                       {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}
                       {/* <DropdownItem divider /> */}
-                      <DropdownItem onClick={ () => setTheme("dark-theme")}>Dark</DropdownItem>
-                      <DropdownItem onClick={ () => setTheme("rave")}>Rave</DropdownItem>
-                      <DropdownItem onClick={ () => setTheme("basset")}>Basset</DropdownItem>
-                      <DropdownItem onClick={ () => setTheme("lovecraft")}>Lovecraft</DropdownItem>
-                      <DropdownItem onClick={ () => setTheme("undertaker")}>Undertaker</DropdownItem>
+                      <DropdownItem onClick={() => setTheme("dark-theme")}>Dark</DropdownItem>
+                      <DropdownItem onClick={() => setTheme("rave")}>Rave</DropdownItem>
+                      <DropdownItem onClick={() => setTheme("basset")}>Basset</DropdownItem>
+                      <DropdownItem onClick={() => setTheme("lovecraft")}>Lovecraft</DropdownItem>
+                      <DropdownItem onClick={() => setTheme("undertaker")}>Undertaker</DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </div>
@@ -101,3 +99,4 @@ const App = () => {
 };
 
 export default App;
+
