@@ -163,6 +163,7 @@ h2 {
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px hotpink, 0 0 40px hotpink, 0 0 50px hotpink, 0 0 60px hotpink, 0 0 70px hotpink
 }
 
+<<<<<<< Updated upstream
 .light-theme {
   background-color: rgb(206, 131, 45);
   /* background: url(./assets/hotel.png); */
@@ -182,6 +183,16 @@ h2 {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 25px;
   padding: 10px;
+=======
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.light-theme {
+  background-color: #f0afa6;
+  color: #444444;
+>>>>>>> Stashed changes
 }
 
 .dark-theme {
@@ -231,6 +242,7 @@ h2 {
   /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white */
 }
 
+<<<<<<< Updated upstream
 /* .dark-theme {
   background-color: black;
   color: transparent;
@@ -238,6 +250,32 @@ h2 {
   font-family: sans-serif;
   filter: brightness(130%);
   text-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+=======
+.top {
+  background-color: #353a40;
+}
+
+.col3 {
+  margin-top: -7px;
+}
+#profileDropDown .rounded-circle {
+  width: 30px;
+}
+.img-fluid {
+  width: 370px;
+  height: 370px;
+  object-fit: cover;
+  border: 10px;
+  border-color: transparent;
+}
+/* .content {
+  padding: 0.5em;
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  height: 90vh;
+>>>>>>> Stashed changes
 } */
 
 .navbar-light .navbar-nav .nav-link {

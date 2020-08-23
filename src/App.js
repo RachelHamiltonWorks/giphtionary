@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
@@ -11,6 +12,21 @@ import ExternalApi from "./views/ExternalApi";
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 import SearchResultContainer from "./components/SearchResultContainer";
+=======
+import React from 'react';
+import { Router, Route, Switch } from 'react-router-dom';
+import { Container, Row, Col } from 'reactstrap';
+
+import Loading from './components/Loading';
+import NavBar from './components/navbar';
+import Footer from './components/Footer';
+import Home from './views/Home';
+import Profile from './views/Profile';
+import ExternalApi from './views/ExternalApi';
+import { useAuth0 } from '@auth0/auth0-react';
+import history from './utils/history';
+import SearchResultContainer from './components/SearchResultContainer';
+>>>>>>> Stashed changes
 
 // styles
 import "./App.css";
@@ -83,7 +99,7 @@ const App = () => {
               <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/external-api" component={ExternalApi} />
+                <Route path="/saved-words" component={ExternalApi} />
               </Switch>
               <Switch></Switch>
             </Container>

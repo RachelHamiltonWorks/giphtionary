@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState } from "react";
 import { Button, Alert } from "reactstrap";
 import Highlight from "../components/Highlight";
@@ -11,8 +12,19 @@ export const ExternalApiComponent = () => {
   const [state, setState] = useState({
     showResult: false,
     apiMessage: "",
+=======
+import { useEffect, useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+
+export const ExternalApi = (url, options = {}) => {
+  const { getAccessTokenSilently } = useAuth0();
+  const [state, setState] = useState({
+>>>>>>> Stashed changes
     error: null,
+    loading: true,
+    data: null,
   });
+<<<<<<< Updated upstream
 
   const {
     getAccessTokenSilently,
@@ -137,8 +149,41 @@ export const ExternalApiComponent = () => {
       </div>
     </>
   );
-};
+=======
+  const [refreshIndex, setRefreshIndex] = useState(0);
 
-export default withAuthenticationRequired(ExternalApiComponent, {
-  onRedirecting: () => <Loading />,
-});
+  useEffect(() => {
+    (async () => {
+      try {
+        const { audience, scope, ...fetchOptions } = options;
+        const accessToken = await getAccessTokenSilently({ audience, scope });
+        const res = await fetch(url, {
+          ...fetchOptions,
+          headers: {
+            ...fetchOptions.headers,
+            // Add the Authorization header to the existing headers
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        setState({
+          ...state,
+          data: await res.json(),
+          error: null,
+          loading: false,
+        });
+      } catch (error) {
+        setState({
+          ...state,
+          error,
+          loading: false,
+        });
+      }
+    })();
+  }, [refreshIndex]);
+
+  return {
+    ...state,
+    refresh: () => setRefreshIndex(refreshIndex + 1),
+  };
+>>>>>>> Stashed changes
+};
