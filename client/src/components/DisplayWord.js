@@ -22,7 +22,7 @@ const DisplayWord = (props) => {
 
   return (
     <div>
-      <h2>{props.word.meta.stems[0]}</h2>
+      <h2>{props.word.meta.stems[0]}</h2><br></br>
       <Button
         type="primary"
         onClick={() => {
