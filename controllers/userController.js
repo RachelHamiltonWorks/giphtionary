@@ -1,68 +1,48 @@
-const jwt = require("express-jwt");
-const jwksRsa = require("jwks-rsa");
-const request = require("request");
-const config = require("../config");
+const user = require("../models/user");
 
-exports.checkJwt = jwt({
-  secret: jwksRsa.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 10,
-    jwksUri: "https://dev-pxt8cafa.eu.auth0.com/.well-known/jwks.json",
-  }),
-  audience: "https://dev--wopf-k8.us.auth0.com/api/v2/",
-  issuer: "https://dev-pxt8cafa.eu.auth0.com/",
-  algorithms: ["RS256"],
-});
+// Defining methods for the UsersController
+module.exports = {
+  findAll: function (req, res) {
+    user
+      .find(req.query)
+      .sort({ date: -1 })
+      .then((dbUser) => res.json(dbUser))
+      .catch((err) => res.status(422).json(err));
+  },
+  findById: function (req, res) {
+    user
+      .findOne({ email: req.params.id })
+      .then((dbUser) => res.json(dbUser))
+      .catch((err) => res.status(422).json(err));
+  },
+  create: function (req, res) {
+    user
+      .find({ email: req.body.email })
+      .then((matchedUser) => {
+        if (matchedUser.length === 0) {
+          return user.create(req.body);
+        } else {
+          return user.findOneAndUpdate(
+            { email: req.body.email },
+            { $push: { word: req.body.word } }
+          );
+        }
+      })
 
-exports.checkRole = (role) => (req, res, next) => {
-  const user = req.user;
-
-  if (user && user[config.AUTH0_NAMESPACE + "/roles"].includes(role)) {
-    next();
-  } else {
-    return res.status(401).send("You are not authorized to access this resource!");
-  }
-};
-
-exports.getAccessToken = (callback) => {
-  const options = {
-    method: "POST",
-    url: config.AUTH0_TOKEN_URL,
-    headers: { "content-type": "application/json" },
-    form: {
-      grant_type: "client_credentials",
-      client_id: config.AUTH0_CLIENT_ID,
-      client_secret: config.AUTH0_CLIENT_SECRET,
-      audience: config.AUTH0_AUDIENCE,
-    },
-  };
-
-  return new Promise((resolve, reject) => {
-    request(options, (error, res, body) => {
-      if (error) {
-        return reject(new Error(error));
-      }
-
-      resolve(body ? JSON.parse(body) : "");
-    });
-  });
-};
-
-exports.getAuth0User = (accessToken) => (userId) => {
-  const options = {
-    method: "GET",
-    url: `${config.AUTH0_DOMAIN}/api/v2/users/${userId}?fields=name,picture,user_id`,
-    headers: { authorization: `Bearer ${accessToken}` },
-  };
-
-  return new Promise((resolve, reject) => {
-    request(options, (error, res, body) => {
-      if (error) {
-        return reject(new Error(error));
-      }
-
-      resolve(body ? JSON.parse(body) : "");
-    });
-  });
+      .then((dbUser) => res.json(dbUser))
+      .catch((err) => res.status(422).json(err));
+  },
+  update: function (req, res) {
+    user
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .then((dbUser) => res.json(dbUser))
+      .catch((err) => res.status(422).json(err));
+  },
+  remove: function (req, res) {
+    user
+      .findById({ _id: req.params.id })
+      .then((dbUser) => dbUser.remove())
+      .then((dbUser) => res.json(dbUser))
+      .catch((err) => res.status(422).json(err));
+  },
 };
