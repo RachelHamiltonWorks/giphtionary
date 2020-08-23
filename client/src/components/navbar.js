@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { NavLink as RouterNavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from 'react';
+import { NavLink as RouterNavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
   Collapse,
-  // Container,
   Navbar,
   NavbarToggler,
   NavbarBrand,
@@ -29,73 +29,33 @@ const NavBar = () => {
     <div className="nav-container">
       <Navbar color="transparent" light expand="md">
         {/* <Container> */}
-          <NavbarBrand className="logo" />
-          <NavbarToggler onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
-              {isAuthenticated && (
-                <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to="/external-api"
-                    exact
-                    activeClassName="router-link-exact-active"
-                  >
-                    External API
-                  </NavLink>
-                </NavItem>
-              )}
-            </Nav>
-            <div className="logo">
-              <h1>Giphtionary</h1>
-            </div>
-            {/* <div className="logo">
-            <img className="mb-3 app-logo" src={logo} alt="Giphtionary logo" width="400" />
-            </div> */}
-            <Nav className="d-none d-md-block" navbar>
-              {!isAuthenticated && (
-                <NavItem>
-                  <Button
-                    id="qsLoginBtn"
-                    color="info"
-                    className="btn-margin"
-                    onClick={() => loginWithRedirect()}
-                  >
-                    Log in
-                  </Button>
-                </NavItem>
-              )}
-              {isAuthenticated && (
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret id="profileDropDown">
-                    <img
-                      src={user.picture}
-                      alt="Profile"
-                      className="nav-user-profile rounded-circle"
-                      width="50"
-                    />
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem header>{user.name}</DropdownItem>
-                    <DropdownItem
-                      tag={RouterNavLink}
-                      to="/profile"
-                      className="dropdown-profile"
-                      activeClassName="router-link-exact-active"
-                    >
-                      <FontAwesomeIcon icon="user" className="mr-3" /> Profile
-                    </DropdownItem>
-                    <DropdownItem
-                      id="qsLogoutBtn"
-                      onClick={() => logoutWithRedirect()}
-                    >
-                      <FontAwesomeIcon icon="power-off" className="mr-3" /> Log
-                      out
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              )}
-            </Nav>
+        <NavbarBrand className="logo" />
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavLink
+              tag={RouterNavLink}
+              to="/"
+              exact
+              activeClassName="router-link-exact-active"
+            >
+              Home
+            </NavLink>
+
+            {isAuthenticated && (
+              <NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  to="/external-api"
+                  exact
+                  activeClassName="router-link-exact-active"
+                >
+                  External API
+                </NavLink>
+              </NavItem>
+            )}
+          </Nav>
+          <Nav className="d-none d-md-block" navbar>
             {!isAuthenticated && (
               <Nav className="d-md-none" navbar>
                 <NavItem>

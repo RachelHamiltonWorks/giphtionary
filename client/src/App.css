@@ -187,18 +187,6 @@ h2 {
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px hotpink, 0 0 40px hotpink, 0 0 50px hotpink, 0 0 60px hotpink, 0 0 70px hotpink
 }
 
-.rave {
-  background-color: #f00;
-}
-
-.rave h1 {
-  color: blue;
-  text-decoration: none;
-  font-family: sans-serif;
-  filter: brightness(100%);
-  text-shadow: 0 0 0;
-}
-
 .light-theme {
   background-color: rgb(206, 131, 45);
   /* background: url(./assets/hotel.png); */
