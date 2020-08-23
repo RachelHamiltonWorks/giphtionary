@@ -111,11 +111,9 @@ body {
 
 #app {
   background-size: auto;
-
-.dark-theme {
-  background-color: #1d1d25;
-  color: #f8f8f8;
 }
+
+
 
 /* logo */
 .dark-theme h1 {
@@ -240,7 +238,6 @@ h2 {
 
 .light-theme .nav-link {
   color: rgb(7, 76, 97);
-=======
 }
 
 .light-theme {
@@ -282,51 +279,10 @@ h2 {
   text-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
 }
 
-.undertaker {
-  background-image: url("./assets/magic.jpg");
-  background-attachment: fixed;
-  background-size: 100%;
-}
-
 
 .top {
   background-color: #353a40;
-
-.undertaker h1 {
-  color: transparent;
-  /* text-shadow: black; */
-  text-decoration: none;
-  font-family: sans-serif;
-  filter: brightness(130%);
-  text-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128);
 }
-
-.undertaker h2 {
-  font-family: sans-serif;
-  font-size: x-large;
-  text-shadow: 0 0 2px rgb(133, 84, 219), 0 0 22px rgb(168, 8, 128);
-  color: transparent;
-  box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128);
-  border: 2px solid transparent;
-  border-radius: 25px;
-  padding: 20px;
-}
-
-.undertaker .btn-info {
-  background-color: rgb(133, 84, 219);
-}
-
-.undertaker .nav-link {
-  color: rgb(133, 84, 219);
-}
-/* .content {
-  padding: 0.5em;
-  margin: 0 auto;
-  max-width: 600px;
-  font-size: 1.2rem;
-  line-height: 1.1;
-  height: 90vh;
-} */
 
 .navbar-light .navbar-nav .nav-link {
 color: white;
