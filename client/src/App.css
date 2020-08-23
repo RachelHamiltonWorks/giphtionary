@@ -259,6 +259,14 @@ h2 {
 .undertaker .nav-link {
   color: rgb(133, 84, 219);
 }
+/* .content {
+  padding: 0.5em;
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  height: 90vh;
+} */
 
 .navbar-light .navbar-nav .nav-link {
 color: white;
