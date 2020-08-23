@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import { Row, Container } from 'reactstrap';
+
+import ResultList from './ResultList';
+
 class Content extends Component {
   render() {
     return (
