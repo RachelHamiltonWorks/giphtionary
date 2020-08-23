@@ -1,0 +1,33 @@
+.undertaker {
+    background-image: url("./assets/magic.jpg");
+    background-attachment: fixed;
+    background-size: 100%;
+  }
+  
+  .undertaker h1 {
+    color: transparent;
+    /* text-shadow: black; */
+    text-decoration: none;
+    font-family: sans-serif;
+    filter: brightness(130%);
+    text-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128);
+  }
+  
+  .undertaker h2 {
+    font-family: sans-serif;
+    font-size: x-large;
+    text-shadow: 0 0 2px rgb(133, 84, 219), 0 0 22px rgb(168, 8, 128);
+    color: transparent;
+    box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128);
+    border: 2px solid transparent;
+    border-radius: 25px;
+    padding: 20px;
+  }
+  
+  .undertaker .btn-info {
+    background-color: rgb(133, 84, 219);
+  }
+  
+  .undertaker .nav-link {
+    color: rgb(133, 84, 219);
+  }
