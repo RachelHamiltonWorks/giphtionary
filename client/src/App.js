@@ -16,7 +16,7 @@ import SearchResultContainer from "./components/SearchResultContainer";
 import "./App.css";
 import "./lovecraft.css";	
 import "./basset.css";	
-import "./dark-theme.css";	
+// import "./dark-theme.css";	
 import "./undertaker.css";	
 import "./rave.css";
 
