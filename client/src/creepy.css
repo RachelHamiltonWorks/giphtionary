@@ -25,7 +25,8 @@
   }
   
   .creepy .btn-info {
-    background-color: rgb(182, 5, 20);
+    background-color: transparent;
+    color: rgb(231, 13, 31);
   }
   
   /* a {
