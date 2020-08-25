@@ -1,6 +1,6 @@
 import React from "react";
-import {Row, Col } from "reactstrap";	
-import { useAuth0} from "@auth0/auth0-react";
+import { Row, Col } from "reactstrap";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function SearchForm(props) {
   const { user } = useAuth0();
@@ -8,8 +8,8 @@ function SearchForm(props) {
   return (
     <div>
       <Row>
-        <Col></Col>
-        <Col>
+        <Col sm="3"></Col>
+        <Col sm="6">
           <form>
             <div className="form-group container">
               <input
@@ -21,10 +21,13 @@ function SearchForm(props) {
                 placeholder={props.transcript}
                 id="search"
               />
+              <button hidden onClick={props.handleFormSubmit} className="btn btn-info mt-3">
+                Search
+             </button>
             </div>
           </form>
         </Col>
-        <Col></Col>
+        <Col sm="3"></Col>
       </Row>
     </div>
   );
