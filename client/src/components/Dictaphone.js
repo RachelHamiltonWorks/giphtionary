@@ -18,10 +18,9 @@ const Dictaphone = (props) => {
       />
       <Container><br></br><br></br>
         <Row>
-          <Col xs="6">
+          <Col>
             <button onClick={props.handleFormSubmit} className="bSearch btn btn-info">Search</button>
-          </Col>
-          <Col xs="6">
+
             <button className="bSpeak btn btn-info" onClick={SpeechRecognition.startListening}>Speak</button>
           </Col>
         </Row>

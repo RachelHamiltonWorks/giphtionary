@@ -14,11 +14,11 @@ import SearchResultContainer from "./components/SearchResultContainer";
 
 // styles
 import "./App.css";
-import "./lovecraft.css";	
+import "./creepy.css";	
 import "./basset.css";	
 // import "./dark-theme.css";	
-import "./undertaker.css";	
-import "./rave.css";
+import "./paul.css";	
+import "./space.css";
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
@@ -63,10 +63,10 @@ const App = () => {
                       {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}	
                       {/* <DropdownItem divider /> */}	
                       <DropdownItem onClick={ () => setTheme("dark-theme")}>Dark</DropdownItem>	
-                      <DropdownItem onClick={ () => setTheme("rave")}>Rave</DropdownItem>	
+                      <DropdownItem onClick={ () => setTheme("space")}>Space</DropdownItem>	
                       <DropdownItem onClick={ () => setTheme("basset")}>Basset</DropdownItem>	
-                      <DropdownItem onClick={ () => setTheme("lovecraft")}>Lovecraft</DropdownItem>	
-                      <DropdownItem onClick={ () => setTheme("undertaker")}>Undertaker</DropdownItem>	
+                      <DropdownItem onClick={ () => setTheme("creepy")}>Creepy</DropdownItem>	
+                      <DropdownItem onClick={ () => setTheme("paul")}>Paul Bearer</DropdownItem>	
                     </DropdownMenu>	
                   </Dropdown>	
                 </div>	
@@ -75,11 +75,11 @@ const App = () => {
             {/* </Container> */}
 
             <Container className="flex-grow-1 mt-5">
-              <Switch>
+              {/* <Switch> */}
                 <Route path="/" exact component={Home} />
                 <Route path="/profile" component={Profile} />
-              </Switch>
-              <Switch></Switch>
+              {/* </Switch> */}
+              {/* <Switch></Switch> */}
             </Container>
 
             <Switch>

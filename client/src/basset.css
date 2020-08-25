@@ -1,6 +1,6 @@
 .basset {
   background-color: burlywood;
-  background-image: url("./assets/custom_basset2.png");
+  background-image: url("./assets/basset_phone2.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -25,16 +25,17 @@
   font-size: x-large;
   text-shadow: 0 0 2px #432818;
   color: transparent;
-  box-shadow: 0 0 4px #432818;
-  border: 2px solid transparent;
+  /* box-shadow: 0 0 4px #432818;
+  border: 2px solid transparent; */
   border-radius: 25px;
   padding: 20px;
+  /* width: 50%; */
 }
 
 .basset .btn-info {
   background-color: #432818;
 }
 
-.basset .nav-link {
-  color: #432818;
-}
+/* a {
+  color: #ecad88;
+} */

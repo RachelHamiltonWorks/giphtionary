@@ -1,0 +1,33 @@
+.creepy {
+    background-image: url("./assets/creepy.png");
+    background-attachment: fixed;
+    background-size: 100%;
+  }
+  
+  .creepy h1 {
+    color: transparent;
+    /* text-shadow: black; */
+    text-decoration: none;
+    font-family: sans-serif;
+    filter: brightness(130%);
+    text-shadow: 0 0 4px rgb(182, 5, 20), 0 0 22px rgb(182, 5, 20);
+  }
+  
+  .creepy h2 {
+    font-family: sans-serif;
+    font-size: x-large;
+    text-shadow: 0 0 2px rgb(182, 5, 20), 0 0 22px rgb(182, 5, 20);
+    color: transparent;
+    /* box-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
+    border: 2px solid transparent; */
+    border-radius: 25px;
+    padding: 20px;
+  }
+  
+  .creepy .btn-info {
+    background-color: rgb(182, 5, 20);
+  }
+  
+  /* a {
+    color: rgb(182, 5, 20);
+  } */

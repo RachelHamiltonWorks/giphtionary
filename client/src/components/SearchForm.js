@@ -9,8 +9,8 @@ function SearchForm(props) {
   return (
     <div>
       <Row>
-        <Col></Col>
-        <Col>
+        <Col sm="3"></Col>
+        <Col sm="6">
           <form>
             <div className="form-group container">
               <input
@@ -22,14 +22,13 @@ function SearchForm(props) {
                 placeholder={props.transcript}
                 id="search"
               />
-
-              {/* <button onClick={props.handleFormSubmit} className="btn btn-info mt-3">
+              <button hidden onClick={props.handleFormSubmit} className="btn btn-info mt-3">
             Search
-          </button> */}
+          </button>
             </div>
           </form>
         </Col>
-        <Col></Col>
+        <Col sm="3"></Col>
       </Row>
     </div>
   );
