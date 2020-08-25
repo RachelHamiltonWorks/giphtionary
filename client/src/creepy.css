@@ -24,9 +24,10 @@
     padding: 20px;
   }
   
-  .creepy .btn-info {
+  .creepy button {
     background-color: transparent;
     color: rgb(231, 13, 31);
+    border-color: transparent;
   }
   
   /* a {

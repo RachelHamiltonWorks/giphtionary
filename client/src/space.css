@@ -24,9 +24,16 @@
   padding: 20px;
 }
 
-.space .btn-info {
+/* .space .button {
   background-color: rgb(46, 100, 134);
+} */
+
+.space button {
+  background-color: rgb(46, 100, 134);
+  border-color: transparent;
 }
+
+
 
 /* .space .nav-link {
   color: rgb(113, 164, 196);

@@ -2,6 +2,14 @@
     background-color: black;
   }
 
+  .dark-theme .logo {
+    position: absolute;
+    left: 47%;
+    margin-left: -160px !important;
+    margin-top: 70px;
+    display: block;
+  }
+
 /* logo */
 .dark-theme h1 {
     font-size: 64px;
@@ -37,6 +45,11 @@
     -webkit-transition: box-shadow 0.6s; 
     transition: box-shadow 0.6s; 
     text-shadow: 10px 10px 10px 10px white 
+}
+
+.dark-theme .dropdown-menu{
+    background-color: transparent !important; 
+    border: none !important;
 }
 
 /* DisplayWord */

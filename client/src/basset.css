@@ -32,8 +32,12 @@
   /* width: 50%; */
 }
 
-.basset .btn-info {
+.basset button {
   background-color: #432818;
+}
+
+.basset footer {
+  color:#432818;
 }
 
 /* a {
