@@ -76,7 +76,10 @@ a:hover {
 }
 
 
-
+@font-face {
+  font-family: BeonMedium;
+  src: url(../src/fonts/Beon/beon-webfont.woff);
+}
 
 
 

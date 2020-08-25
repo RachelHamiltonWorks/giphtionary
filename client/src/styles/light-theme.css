@@ -4,6 +4,11 @@
 
 /* logo */
 
+.light-theme .placeholder {
+    height: calc(100vh - 430px);
+    /* width: calc(100vh - 304px); */
+  }
+
 .light-theme h1 {
     color: transparent;
     background: url("../assets/old_logo.gif");
@@ -16,60 +21,65 @@
 /* search field border */
 
 .light-theme input {
-    border-color: yellow;
+    border-color: aqua ;
+    -webkit-box-shadow: inset 0px 0px 8px 3px aqua;
+    box-shadow: 0px 0px 5px 1px aqua, inset 0px 0px 5px 0px aqua;
+    -webkit-transition: box-shadow 0.6s;
+    transition: box-shadow 0.6s;
+    text-shadow: 10px 10px 10px 10px aqua
 }
 
 /* buttons */
 
 .light-theme button {
     font-size: 12px;
-    border-radius: 2px;
+    /* border-radius: 2px; */
     cursor: pointer;
-    font-family: 'astro', Fallback, sans-serif;
-    background-color: #1d1d25 !important;
-    border: 0.5px solid aqua !important;
-    color: white !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #63ebf0 !important;
+    border: 0.5px solid rgb(98, 0, 255) !important;
+    color: black !important;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    -webkit-box-shadow: inset 0px 0px 8px 3px white;
-    box-shadow: 0px 0px 5px 1px white, inset 0px 0px 5px 0px white;
+    /* -webkit-box-shadow: inset 0px 0px 8px 3px aqua;
+    box-shadow: 0px 0px 5px 1px aqua, inset 0px 0px 5px 0px aqua;
     -webkit-transition: box-shadow 0.6s;
     transition: box-shadow 0.6s;
-    text-shadow: 10px 10px 10px 10px white
+    text-shadow: 10px 10px 10px 10px aqua */
 }
 
 /* DisplayWord */
 
-.light-theme h2 {
-    font-size: 40px;
+.light-theme h2  {
+    font-size: 50px;
     font-family: 'BeonMedium', Fallback, sans-serif;
     background-color: transparent!important;
-    border: #ec0a61;
+    border: #e40aec;
     color: white !important;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    text-shadow: 0 0 10px #ec0a61, 0 0 20px #ec0a61, 0 0 30px #ec0a61, 0 0 41px #ec0a61, 0 0 50px #ec0a61, 0 0 60px #ec0a61, 0 0 70px #ec0a61;
+    text-shadow: 0 0 10px #e40aec, 0 0 20px #e40aec, 0 0 30px #e40aec, 0 0 41px #e40aec, 0 0 50px #e40aec, 0 0 60px #e40aec, 0 0 70px #e40aec;
 }
 
 /* definition */
 
-.light-theme h3 {
+.light-theme h2 p{
     font-size: 30px;
-    border-radius: 2px;
-    cursor: pointer;
     font-family: 'BeonMedium', Fallback, sans-serif;
-    background-color: transparent !important;
-    color: white !important;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    border-color: #fff;
-    /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white */
+    background-color: transparent!important;
+    /* border: #ec4747; */
+    color: #c8ec47 !important;
+    /* -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; */
+    text-shadow: 0 0 0px !important ; 
 }
 
 /* footer */
 
 .light-theme footer {
-    background-color: darkcyan;
-    color: white;
+    background-image: url("../assets/giphy\ developers\ background\ api\ gif.gif");
+    color: aqua;
     text-align: center;
+    height: 192px;
 }
+

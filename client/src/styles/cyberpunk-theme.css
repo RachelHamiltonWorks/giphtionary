@@ -15,6 +15,11 @@
     text-shadow: 0 0 10px aqua, 0 0 20px aqua, 0 0 30px aqua, 0 0 40px aqua, 0 0 50px aqua, 0 0 60px aqua, 0 0 70px aqua
 }
 
+.cyberpunk-theme .placeholder {
+    height: calc(100vh - 430px);
+    /* width: calc(100vh - 304px); */
+  }
+
 .cyberpunk-theme input {
     border-color: yellow;
   }
@@ -66,8 +71,9 @@
 
 /* footer */
 .cyberpunk-theme footer {
-    background-color: darkcyan;
-    color: white;
+    background-image: url("../assets/giphy\ developers\ background\ api\ gif.gif");
+    color: aqua;
     text-align: center;
-}  
+    height: 192px;
+}
 

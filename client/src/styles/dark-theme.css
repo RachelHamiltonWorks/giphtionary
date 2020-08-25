@@ -4,7 +4,7 @@
 
 /* logo */
 .dark-theme h1 {
-    font-size: 36px;
+    font-size: 64px;
     border-radius: 2px;
     cursor: pointer;
     font-family: 'BeonMedium', Fallback, sans-serif;
@@ -41,34 +41,34 @@
 
 /* DisplayWord */
 .dark-theme h2 { 
-    font-size: 40px;
-    font-family: 'BeonMedium', Fallback, sans-serif;
-    background-color: transparent!important;
-    border: #ec0a61;
-    color: white !important;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    text-shadow: 0 0 10px #ec0a61, 0 0 20px #ec0a61, 0 0 30px #ec0a61, 0 0 41px #ec0a61, 0 0 50px #ec0a61, 0 0 60px #ec0a61, 0 0 70px #ec0a61;
-}
-    
-/* definition */
-.dark-theme h3 {
-    font-size: 30px;
+    font-size: 48px;
     border-radius: 2px;
-    cursor:pointer;
+    cursor: pointer;
     font-family: 'BeonMedium', Fallback, sans-serif;
     background-color: transparent !important;
     color: white !important;
-    -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    border-color: #fff;
-    /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white */
+    border-color: white;
+    text-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 60px green, 0 0 70px green
+}
+    
+/* definition */
+.dark-theme h2 p {
+    font-size: 36px !important;
+    border-radius: 1px;
+    cursor: pointer;
+    font-family: 'BeonMedium', Fallback, sans-serif;
+    background-color: transparent !important;
+    color: white !important;
+    transition: all .3s ease-in-out;
+    border-color: white;
+    text-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 60px green, 0 0 70px green
  }    
 
-/* footer */
-.dark-theme footer {
-    background-color: darkcyan;
-    color: white;
+ .dark-theme footer {
+    background-image: url("../assets/giphy\ developers\ background\ api\ gif.gif");
+    color: aqua;
     text-align: center;
-}  
+    height: 192px;
+}
 

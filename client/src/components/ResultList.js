@@ -11,7 +11,7 @@ function ResultList(props) {
       <br></br>
       <DisplayWord word={props.resultsDictionary} />
       {props.resultsDictionary.shortdef && <h2>{props.resultsDictionary.shortdef.map((def) => 
-      <p>{def}</p>)}</h2>}
+      <p >{def} </p>)}</h2>}
       <div id="wrapper">
         {props.resultsGiphy.map((result) => (
           <img
