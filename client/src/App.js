@@ -16,7 +16,6 @@ import SearchResultContainer from "./components/SearchResultContainer";
 import "./App.css";
 import "./creepy.css";
 import "./basset.css";
-// import "./dark-theme.css";	
 import "./paul.css";
 import "./space.css";
 
@@ -31,10 +30,10 @@ const App = () => {
   const toggle = () => setDropdownOpen(prevState => !prevState);
   // theming -rr
 
-  const { isLoading, error, user } = useAuth0();
+  const { isLoading, error } = useAuth0();
 
   if (error) {
-    return <div>Oops... {error.message}</div>;
+    return <div>Oops... there appears to be an error. {error.message}</div>;
   }
 
   if (isLoading) {
@@ -72,7 +71,7 @@ const App = () => {
                 </div>
               </Col>
             </Row>
-            {/* </Container> */}
+         
 
             <Container className="flex-grow-1 mt-5">
               {/* <Switch> */}

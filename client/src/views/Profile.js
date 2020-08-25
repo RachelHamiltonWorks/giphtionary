@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import API from "../utils/API";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Loading from "../components/Loading";
@@ -19,7 +19,14 @@ export const ProfileComponent = () => {
     <Container className="mb-5">
       <Row className="align-items-center profile-header mb-5 text-center text-md-left">
         <Col md>
-          <h2>{userData.word}</h2>
+          <h2>PREVIOUS SEARCHES</h2>
+          {userData.word && (
+            <h2>
+              {userData.word.map((word) => (
+                <p>{word}</p>
+              ))}
+            </h2>
+          )}
           <p className="lead text-muted">{userData.email}</p>
         </Col>
       </Row>

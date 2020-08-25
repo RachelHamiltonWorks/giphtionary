@@ -1,217 +1,15 @@
-/* CSS light/dark mode color schemes, design elements, fonts are not yet incorporated, in testing mode
- - saved in Rachel's mockup repo */
-
-.stuff {
-  height: 3250px;
-}
-
- .bSearch {
-  position: relative;
-  left: -20px;
-}
-
-.bSpeak {
-  position: relative;
-  right: -20px;
-}
-
-.input {
-  border-color: black;
-}
-
-.foot {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  /* height: 35px; */
-  background-color: black;
-  color: white;
-  text-align: center;
-}
-
-@font-face {
-  font-family: 'BeonMedium';
-  src: url(./fonts/Beon/beon-webfont.woff);
-}
-
-@font-face {
-  font-family: 'astro';
-  src: url(./fonts/astro/astro.ttf);
-}
-
-@font-face {
-  font-family: 'Arigatou';
-  src: url(./fonts/a_arigatou_gozaimasu/aArigatouGozaimasu.ttf);
-}
-
-@font-face {
-  font-family: 'Almost-Japanese-2020';
-  src: url(./fonts/Almost-Japanese-2020/JAPANESE_2020.ttf);
-}
-
-@font-face {
-  font-family: 'Asian Foods';
-  src: url(./fonts/AsianFoods/AsianFood.ttf);
-}
-
-@font-face {
-  font-family: 'atari_kids';
-  src: url(./fonts/atari_kids/atari-kids.ttf);
-}
-
-@font-face {
-  font-family: 'bullets4';
-  src: url(./fonts/bullets4/bullets4.ttf);
-}
-
-@font-face {
-  font-family: 'technopollas';
-  src: url(./fonts/technopollas/Technopollas.otf);
-}
-
-@font-face {
-  font-family: 'electroharmonix';
-  src: url(./fonts/electroharmonix/electroharmonix.ttf);
-}
-
-@font-face {
-  font-family: 'fuji_quake_zone';
-  src: url(./fonts/fuji_quake_zone/Fuji\ Quake\ Zone.ttf);
-}
-
-@font-face {
-  font-family: 'kawaiifoodfont';
-  src: url(./fonts/kawaiifoodfont/Kawaii\ Food\ Font.ttf);
-}
-
-@font-face {
-  font-family: 'made_in_china';
-  src: url(./fonts/made_in_china/MADEC___.TTF);
-}
-
-@font-face {
-  font-family: 'not_the_far_east';
-  src: url(./fonts/not_the_far_east/Not\ the\ far\ east.woff);
-}
-
-@font-face {
-  font-family: 'old_japanese';
-  src: url(./fonts/old_japanese/old_japanese.otf);
-}
-
-@font-face {
-  font-family: 'old_japanese';
-  src: url(./fonts/old_japanese/old_japanese.otf);
-}
-
-@font-face {
-  font-family: 'vermin_vibes_1989';
-  src: url(./fonts/vermin_vibes_1989/Vermin\ Vibes\ 1989.ttf);
-}
-
-@font-face {
-  font-family: 'Tr2n';
-  src: url(./fonts/tr2n/Tr2n.ttf);
-}
-
-/* buttons */
-
-.dark-theme button {
-  font-size: 12px;
-  border-radius: 2px;
-  cursor: pointer;
-  font-family: 'astro', Fallback, sans-serif;
-  background-color: #1d1d25 !important;
-  border: 0.5px solid white !important;
-  color: white !important;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  -webkit-box-shadow: inset 0px 0px 8px 3px white;
-  box-shadow: 0px 0px 5px 1px white, inset 0px 0px 5px 0px white;
-  -webkit-transition: box-shadow 0.6s;
-  transition: box-shadow 0.6s;
-  text-shadow: 10px 10px 10px 10px white
-}
-
-/* Fix for use only flexbox in content area */
-
-.next-steps .row {
-  margin-bottom: 0;
-}
+/* ________________________global styling */
 
 body {
   margin: 0;
   text-align: center;
+  padding: 0;
+  height: 100%;
+  background-color: white;
 }
 
-/* logo */
-
-.dark-theme {
-  background-color: black;
-  color: transparent;
-  text-decoration: none;
-  font-family: sans-serif;
-  filter: brightness(130%);
-  text-shadow: 0 0 4px rgb(9, 146, 43), 0 0 22px rgb(2, 95, 38);
-}
-
-.dark-theme h1 {
-  font-size: 36px;
-  border-radius: 2px;
-  cursor: pointer;
-  font-family: 'BeonMedium', Fallback, sans-serif;
-  background-color: transparent !important;
-  color: white !important;
-  transition: all .3s ease-in-out;
-  border-color: white;
-  text-shadow: 0 0 10px aqua, 0 0 20px aqua, 0 0 30px aqua, 0 0 40px aqua, 0 0 50px aqua, 0 0 60px aqua, 0 0 70px aqua
-}
-
-/* DisplayWord */
-
-.dark-theme h2 {
-  font-size: 40px;
-  font-family: 'BeonMedium', Fallback, sans-serif;
-  background-color: transparent!important;
-  border: #ec0a61;
-  color: white !important;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  text-shadow: 0 0 10px #ec0a61, 0 0 20px #ec0a61, 0 0 30px #ec0a61, 0 0 41px #ec0a61, 0 0 50px #ec0a61, 0 0 60px #ec0a61, 0 0 70px #ec0a61;
-}
-
-/* definition */
-
-.dark-theme h3 {
-  font-size: 30px;
-  border-radius: 2px;
-  cursor: pointer;
-  font-family: 'BeonMedium', Fallback, sans-serif;
-  background-color: transparent !important;
-  color: white !important;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  border-color: #fff;
-  /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white */
-}
-
-a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-a:hover {
-  color: white;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: #f0afa6;
-  position: relative;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-  color: white;
+#app {
+  background-size: auto;
 }
 
 .logo {
@@ -222,97 +20,29 @@ a:hover {
   display: block;
 }
 
-.btn-info {
-  background-color: transparent;
-  border-color: #000000;
+.bSearch {
+  position: relative;
+  left: 200px;
 }
 
-h1 {
-  color: transparent;
+.bSpeak {
+  position: relative;
+  right: 200px;
+}
+
+/* .btn-info {
+  background-color: transparent;
+  border-color: #000000;
+} */
+
+.placeholder {
+  height: calc(100vh - 250px);
 }
 
 #wrapper img {
   box-sizing: border-box;
   size: 50px;
   border-style: solid;
-}
-
-h2 {
-  font-family: "Times New Roman", Times, serif;
-  border: 2px black;
-}
-
-/* .light-theme h1 {
-  font-size: 72px;
-  border-radius: 2px;
-  cursor:pointer;
-  font-family: 'BeonMedium', Fallback, sans-serif;
-  background-color: transparent !important;
-  color: hotpink !important;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  border-color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px hotpink, 0 0 40px hotpink, 0 0 50px hotpink, 0 0 60px hotpink, 0 0 70px hotpink
-} */
-
-.light-theme {
-  background-color: rgb(95, 154, 233);
-  background: url(./assets/light2.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-.light-theme h1 {
-  color: transparent;
-  text-shadow: 0 0 2px rgb(7, 76, 97);
-  /* box-sizing: border-box; */
-}
-
-.light-theme h2 {
-  font-family: sans-serif;
-  font-size: xx-large;
-  color: transparent;
-  text-shadow: 0 0 1px rgb(7, 76, 97), 0 0 22px rgb(7, 76, 97);
-  /* box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128); */
-  /* border: 2px solid rgb(7, 76, 97); */
-  /* border-radius: 25px; */
-  padding: 10px;
-  /* width: 50%; */
-  /* position: -webkit-sticky; */
-}
-
-.light-theme .btn-info {
-  background-color: rgb(7, 76, 97);
-}
-
-.light-theme .nav-link {
-  color: rgb(7, 76, 97);
-}
-
-.basset {
-  background-color: burlywood;
-}
-
-.basset h1 {
-  color: chocolate;
-}
-
-.top {
-  background-color: #353a40;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: white;
-}
-
-.top {
-  background-color: transparent;
-  height: 80px;
-}
-
-.col3 {
-  margin-top: -6px;
 }
 
 .img-fluid {
@@ -323,3 +53,38 @@ h2 {
   border-color: transparent;
   border-radius: 25px;
 }
+
+.col3 {
+  margin-top: -6px;
+}
+
+/* .foot {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+} */
+
+#footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;   /* Height of the footer */
+}
+
+a:hover {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
