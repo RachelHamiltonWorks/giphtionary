@@ -17,7 +17,7 @@ import SearchResultContainer from "./components/SearchResultContainer";
 import "./App.css";
 import "../src/styles/light-theme.css";
 import "../src/styles/dark-theme.css";
-import "../src/styles/cyberpunk-theme.css";		
+// import "../src/styles/cyberpunk-theme.css";		
 import "./creepy.css";
 import "./basset.css";
 import "./paul.css";
@@ -65,7 +65,7 @@ const App = () => {
                       <DropdownItem onClick={() => setTheme("basset")}>Basset</DropdownItem>
                       <DropdownItem onClick={() => setTheme("creepy")}>Creepy</DropdownItem>
                       <DropdownItem onClick={() => setTheme("paul")}>Paul Bearer</DropdownItem>
-                      <DropdownItem onClick={() => setTheme("cyberpunk-theme")}>Cyberpunk</DropdownItem>		
+                      {/* <DropdownItem onClick={() => setTheme("cyberpunk-theme")}>Cyberpunk</DropdownItem>		 */}
                     </DropdownMenu>	
                   </Dropdown>	
               </Col>	
