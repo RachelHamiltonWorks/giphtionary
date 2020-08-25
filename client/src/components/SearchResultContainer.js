@@ -96,7 +96,9 @@ class SearchResultContainer extends Component {
       resultsDictionary={this.state.resultsDictionary}
     />)
     } else {
-      return <div></div>;
+      return <div className="placeholder">
+        
+      </div>;
     }
   };
 

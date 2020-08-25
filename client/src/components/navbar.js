@@ -28,11 +28,10 @@ const NavBar = () => {
   return (
     <div className="nav-container">
       <Navbar color="transparent" light expand="md">
-        {/* <Container> */}
           <NavbarBrand className="logo" />
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
+            {/* <Nav className="mr-auto" navbar>
               {isAuthenticated && (
                 <NavItem>
                   <NavLink
@@ -45,7 +44,7 @@ const NavBar = () => {
                   </NavLink>
                 </NavItem>
               )}
-            </Nav>
+            </Nav> */}
             <div className="logo">
               <h1>Giphtionary</h1>
             </div>
@@ -83,7 +82,7 @@ const NavBar = () => {
                       className="dropdown-profile"
                       activeClassName="router-link-exact-active"
                     >
-                      <FontAwesomeIcon icon="user" className="mr-3" /> Profile
+                      <FontAwesomeIcon icon="user" className="mr-3" /> Saved Words
                     </DropdownItem>
                     <DropdownItem
                       id="qsLogoutBtn"
@@ -149,7 +148,6 @@ const NavBar = () => {
               </Nav>
             )}
           </Collapse>
-        {/* </Container> */}
       </Navbar>
     </div>
   );

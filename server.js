@@ -15,7 +15,13 @@ app.use(routes);
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-    "mongodb+srv://MichaelP:Stringbean86@cluster0.fwi9o.mongodb.net/user?retryWrites=true&w=majority"
+    "mongodb+srv://MichaelP:Stringbean86@cluster0.fwi9o.mongodb.net/user?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
 );
 
 app.listen(PORT, function () {
