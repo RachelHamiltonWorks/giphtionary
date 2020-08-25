@@ -15,6 +15,7 @@
     text-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 60px green, 0 0 70px green
 }
 
+/* search field border */
 .dark-theme input {
     border-color: yellow;
   }

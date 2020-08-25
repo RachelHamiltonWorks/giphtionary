@@ -28,29 +28,12 @@ const NavBar = () => {
   return (
     <div className="nav-container">
       <Navbar color="transparent" light expand="md">
-          <NavbarBrand className="logo" />
+          <NavbarBrand class="navbar-brand" href="/" src="../assets/old_logo.gif" alt=""/>        
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            {/* <Nav className="mr-auto" navbar>
-              {isAuthenticated && (
-                <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to="/external-api"
-                    exact
-                    activeClassName="router-link-exact-active"
-                  >
-                    External API
-                  </NavLink>
-                </NavItem>
-              )}
-            </Nav> */}
             <div className="logo">
               <h1>Giphtionary</h1>
             </div>
-            {/* <div className="logo">
-            <img className="mb-3 app-logo" src={logo} alt="Giphtionary logo" width="400" />
-            </div> */}
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>
@@ -85,6 +68,14 @@ const NavBar = () => {
                       <FontAwesomeIcon icon="user" className="mr-3" /> Saved Words
                     </DropdownItem>
                     <DropdownItem
+                      tag={RouterNavLink}
+                      to="/"
+                      className="dropdown-profile"
+                      activeClassName="router-link-exact-active"
+                    >
+                      <FontAwesomeIcon icon="user" className="mr-3" /> Home
+                    </DropdownItem>
+                    <DropdownItem
                       id="qsLogoutBtn"
                       onClick={() => logoutWithRedirect()}
                     >
@@ -101,7 +92,6 @@ const NavBar = () => {
                   <Button
                     className="button"
                     id="qsLoginBtn"
-                    // color="info"
                     block
                     onClick={() => loginWithRedirect({})}
                   >

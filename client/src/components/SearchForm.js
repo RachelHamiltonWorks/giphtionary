@@ -21,6 +21,7 @@ function SearchForm(props) {
                 placeholder={props.transcript}
                 id="search"
               />
+
               <button hidden onClick={props.handleFormSubmit} className="btn button mt-3">
                 Search
              </button>

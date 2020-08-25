@@ -26,25 +26,6 @@ class SearchResultContainer extends Component {
     })
   };
 
-  // searchGiphy = (query) => {
-  //   API.searchGiphy(query)
-  //     .then((res) => {
-  //      console.log("gifs", res.data);
-  //      this.setState({ resultsGiphy: res.data.data });
-  //      })
-  //     .catch((err) => console.log(err));
-  // };
-
-  // searchDictionary = (query) => {
-  //   API.searchDictionary(query)
-  //     .then((res) => {
-  //       console.log("dictionary", res.data);
-  //       this.setState({ resultsDictionary: res.data[0] });
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  //typed input
   handleInputChange = (event) => {
     document.getElementById("search").placeholder = ""
     const name = event.target.name;
@@ -106,7 +87,7 @@ class SearchResultContainer extends Component {
     console.log("resultsDictionary")
     console.log(this.state.resultsDictionary)
     return (
-      <div className="stuff">
+      <div>
         <Dictaphone
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}

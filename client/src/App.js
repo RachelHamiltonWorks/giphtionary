@@ -1,6 +1,7 @@
+  
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";	
 
 import Loading from "./components/Loading";
 import NavBar from "./components/navbar";
@@ -14,6 +15,9 @@ import SearchResultContainer from "./components/SearchResultContainer";
 
 // styles
 import "./App.css";
+import "../src/styles/light-theme.css";
+import "../src/styles/dark-theme.css";
+import "../src/styles/cyberpunk-theme.css";		
 import "./creepy.css";
 import "./basset.css";
 import "./paul.css";
@@ -25,8 +29,8 @@ initFontAwesome();
 
 const App = () => {
   // theming -rr
-  const [theme, setTheme] = React.useState("light-theme");
-  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const [theme, setTheme] = React.useState("light-theme");	
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);	
   const toggle = () => setDropdownOpen(prevState => !prevState);
   // theming -rr
 
@@ -45,40 +49,36 @@ const App = () => {
       {/* theming -rr */}
       <div className={theme}>
         <Router history={history}>
+
           <div id="app" className="d-flex flex-column h-100">
-            {/* <Container> */}
-            <Row className='top'>
-              <Col></Col>
-              <Col sm={9}><NavBar></NavBar></Col>
-              <Col className='col3'>
-                <div className='button-container bg-transparent'>
-                  <Dropdown isOpen={dropdownOpen} toggle={toggle} className="btn mt-2">
-                    <DropdownToggle className="btn button" caret>
-                      Themes
-                  </DropdownToggle>
-                    <DropdownMenu className="btn button">
-                      {/* <DropdownItem header>Select a theme</DropdownItem> */}
+            <Row className='top'>	
+              <Col></Col>	
+              <Col sm={9}><NavBar></NavBar></Col>	
+              <Col className='col3'>	
+                  <Dropdown isOpen={dropdownOpen} toggle={toggle} className="btn mt-2">	
+                    <DropdownToggle className="btn button" caret>	
+                      Themes	
+                  </DropdownToggle>	
+                    <DropdownMenu className="btn button">	
                       <DropdownItem onClick={() => setTheme("light-theme")}>Light</DropdownItem>
-                      {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}
-                      {/* <DropdownItem divider /> */}
                       <DropdownItem onClick={() => setTheme("dark-theme")}>Dark</DropdownItem>
                       <DropdownItem onClick={() => setTheme("space")}>Space</DropdownItem>
                       <DropdownItem onClick={() => setTheme("basset")}>Basset</DropdownItem>
                       <DropdownItem onClick={() => setTheme("creepy")}>Creepy</DropdownItem>
                       <DropdownItem onClick={() => setTheme("paul")}>Paul Bearer</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </div>
-              </Col>
+                      <DropdownItem onClick={() => setTheme("cyberpunk")}>Cyberpunk</DropdownItem>		
+                    </DropdownMenu>	
+                  </Dropdown>	
+              </Col>	
             </Row>
          
 
             <Container className="flex-grow-1 mt-5">
-              {/* <Switch> */}
-              <Route path="/" exact component={Home} />
-              <Route path="/profile" component={Profile} />
-              {/* </Switch> */}
-              {/* <Switch></Switch> */}
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/profile" component={Profile} />
+              </Switch>
+              <Switch></Switch>
             </Container>
 
             <Switch>

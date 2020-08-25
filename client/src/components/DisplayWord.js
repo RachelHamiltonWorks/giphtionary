@@ -24,7 +24,7 @@ const DisplayWord = (props) => {
     <div>
       <h2>{props.word.meta.stems[0]}</h2><br></br>
       <Button
-        className="button"
+        className="btn button"
         type="primary"
         onClick={() => {
           postToDB(props.word.meta.stems[0]);
