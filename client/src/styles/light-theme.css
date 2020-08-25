@@ -27,7 +27,7 @@
     cursor: pointer;
     font-family: 'astro', Fallback, sans-serif;
     background-color: #1d1d25 !important;
-    border: 0.5px solid white !important;
+    border: 0.5px solid aqua !important;
     color: white !important;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
