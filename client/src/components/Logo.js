@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 
-const Logo = () => (
-<h1>giphtionary</h1>
-);
+// const Logo = () => (
+// <img src={"../assets/old_logo.gif"}></img>
+// );
 
-export default Logo;
+// export default Logo;

@@ -19,7 +19,6 @@ export const ProfileComponent = () => {
     <Container className="mb-5">
       <Row className="align-items-center profile-header mb-5 text-center text-md-left">
         <Col md>
-          <h2>PREVIOUS SEARCHES</h2>
           {userData.word && (
             <h2>
               {userData.word.map((word) => (
