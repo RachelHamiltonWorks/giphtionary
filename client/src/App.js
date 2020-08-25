@@ -53,10 +53,10 @@ const App = () => {
               <Col className='col3'>
                 <div className='button-container bg-transparent'>
                   <Dropdown isOpen={dropdownOpen} toggle={toggle} className="btn mt-2">
-                    <DropdownToggle className="btn btn-info" caret>
+                    <DropdownToggle className="btn button" caret>
                       Themes
                   </DropdownToggle>
-                    <DropdownMenu className="btn btn-info">
+                    <DropdownMenu className="btn button">
                       {/* <DropdownItem header>Select a theme</DropdownItem> */}
                       <DropdownItem onClick={() => setTheme("light-theme")}>Light</DropdownItem>
                       {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}

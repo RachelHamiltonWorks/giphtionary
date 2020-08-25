@@ -56,8 +56,8 @@ const NavBar = () => {
                 <NavItem>
                   <Button
                     id="qsLoginBtn"
-                    color="info"
-                    className="btn-margin"
+                    // color="info"
+                    className="button"
                     onClick={() => loginWithRedirect()}
                   >
                     Log in
@@ -99,8 +99,9 @@ const NavBar = () => {
               <Nav className="d-md-none" navbar>
                 <NavItem>
                   <Button
+                    className="button"
                     id="qsLoginBtn"
-                    color="info"
+                    // color="info"
                     block
                     onClick={() => loginWithRedirect({})}
                   >
