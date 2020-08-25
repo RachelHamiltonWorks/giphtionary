@@ -14,11 +14,14 @@ import SearchResultContainer from "./components/SearchResultContainer";
 
 // styles
 import "./App.css";
+import "../src/styles/light-theme.css";
+import "../src/styles/dark-theme.css";
+import "../src/styles/cyberpunk-theme.css";		
 import "./lovecraft.css";	
 import "./basset.css";	
-// import "./dark-theme.css";	
 import "./undertaker.css";	
 import "./rave.css";
+	
 
 // fontawesome
 import initFontAwesome from "./utils/initFontAwesome";
@@ -31,10 +34,10 @@ const App = () => {
   const toggle = () => setDropdownOpen(prevState => !prevState);
   // theming -rr
 
-  const { isLoading, error, user } = useAuth0();
+  const { isLoading, error } = useAuth0();
 
   if (error) {
-    return <div>Oops... {error.message}</div>;
+    return <div>Oops... there appears to be an error. {error.message}</div>;
   }
 
   if (isLoading) {
@@ -46,33 +49,31 @@ const App = () => {
       {/* theming -rr */}
       <div className={theme}>
         <Router history={history}>
-          <div id="app" className="d-flex flex-column h-100">
-            {/* <Container> */}
+          <div id="app" >
+         
             <Row className='top'>	
               <Col></Col>	
               <Col sm={9}><NavBar></NavBar></Col>	
               <Col className='col3'>	
-                <div className='button-container bg-transparent'>	
+                {/* <div className='button-container bg-transparent'>	 */}
                   <Dropdown isOpen={dropdownOpen} toggle={toggle} className="btn mt-2">	
-                    <DropdownToggle className="btn btn-info" caret>	
+                    <DropdownToggle className="btn" caret>	
                       Themes	
                   </DropdownToggle>	
-                    <DropdownMenu className="btn btn-info">	
-                      {/* <DropdownItem header>Select a theme</DropdownItem> */}	
+                    <DropdownMenu className="btn">	
                       <DropdownItem onClick={ () => setTheme("light-theme")}>Light</DropdownItem>	
-                      {/* <DropdownItem disabled>Action (disabled)</DropdownItem> */}	
-                      {/* <DropdownItem divider /> */}	
                       <DropdownItem onClick={ () => setTheme("dark-theme")}>Dark</DropdownItem>	
                       <DropdownItem onClick={ () => setTheme("rave")}>Rave</DropdownItem>	
                       <DropdownItem onClick={ () => setTheme("basset")}>Basset</DropdownItem>	
                       <DropdownItem onClick={ () => setTheme("lovecraft")}>Lovecraft</DropdownItem>	
-                      <DropdownItem onClick={ () => setTheme("undertaker")}>Undertaker</DropdownItem>	
+                      <DropdownItem onClick={ () => setTheme("undertaker")}>Undertaker</DropdownItem>
+                      <DropdownItem onClick={ () => setTheme("cyberpunk-theme")}>Cyberpunk</DropdownItem>		
                     </DropdownMenu>	
                   </Dropdown>	
-                </div>	
+                {/* </div>	 */}
               </Col>	
             </Row>
-            {/* </Container> */}
+         
 
             <Container className="flex-grow-1 mt-5">
               <Switch>
