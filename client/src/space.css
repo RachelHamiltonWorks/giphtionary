@@ -1,0 +1,33 @@
+.space {
+  background-image: url("./assets/space.png");
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+.space h1 {
+  color: transparent;
+  /* text-shadow: black; */
+  text-decoration: none;
+  font-family: sans-serif;
+  filter: brightness(130%);
+  text-shadow: 0 0 2px rgb(177, 176, 180), 0 0 22px rgb(255, 255, 255);
+}
+
+.space h2 {
+  font-family: sans-serif;
+  font-size: x-large;
+  text-shadow: 0 0 1px rgb(177, 176, 180), 0 0 22px rgb(255, 255, 255);
+  color: transparent;
+  /* box-shadow: 0 0 4px rgb(18, 9, 34), 0 0 22px rgb(168, 8, 128); */
+  /* border: 2px solid transparent; */
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.space .btn-info {
+  background-color: rgb(46, 100, 134);
+}
+
+/* .space .nav-link {
+  color: rgb(113, 164, 196);
+} */

@@ -18,8 +18,8 @@ class SearchResultContainer extends Component {
       API.searchDictionary(query).then((dictRes) => {
         console.log("gifs", giphyRes.data);
         console.log("words", dictRes.data);
-        this.setState({ 
-          resultsGiphy: giphyRes.data.data, 
+        this.setState({
+          resultsGiphy: giphyRes.data.data,
           resultsDictionary: dictRes.data[0]
         })
       })
@@ -44,9 +44,9 @@ class SearchResultContainer extends Component {
   //     .catch((err) => console.log(err));
   // };
 
-//typed input
+  //typed input
   handleInputChange = (event) => {
-    document.getElementById("search").placeholder=""
+    document.getElementById("search").placeholder = ""
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
@@ -63,10 +63,10 @@ class SearchResultContainer extends Component {
 
     let query = this.state.search === "" ? speech : this.state.search
     this.searchData(query);
-    this.setState({search: ""})
-    
-    document.getElementById("search").placeholder=""
- 
+    this.setState({ search: "" })
+
+    document.getElementById("search").placeholder = ""
+
     // console.log(speech)
     // this.setState ({
     //  speech: speech   
@@ -83,18 +83,18 @@ class SearchResultContainer extends Component {
     //  }
     //  this.setState({search: "", speech: ""})
     // })
-    
+
   };
 
   renderResultList = () => {
     console.log(this.state.resultsDictionary);
     console.log(this.state.resultsGiphy);
-    if (this.state.resultsDictionary && this.state.resultsGiphy.length){
+    if (this.state.resultsDictionary && this.state.resultsGiphy.length) {
       console.log("rendering result list")
       return (<ResultList
-      resultsGiphy={this.state.resultsGiphy}
-      resultsDictionary={this.state.resultsDictionary}
-    />)
+        resultsGiphy={this.state.resultsGiphy}
+        resultsDictionary={this.state.resultsDictionary}
+      />)
     } else {
       return <div className="placeholder">
         
@@ -106,7 +106,7 @@ class SearchResultContainer extends Component {
     console.log("resultsDictionary")
     console.log(this.state.resultsDictionary)
     return (
-      <div>
+      <div className="stuff">
         <Dictaphone
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
